@@ -1,11 +1,26 @@
 // Copyright 1999-2018. Plesk International GmbH. All rights reserved.
 
+const fs = require('fs-extra');
 const path = require('path');
 const appPath = process.cwd();
 const resolveAppPath = relativePath => path.resolve(appPath, relativePath);
 
+const loadCustomConfig = (config, params) => {
+    const configPath = resolveAppPath('extension.config.js');
+    if (!fs.pathExistsSync(configPath)) {
+        return config;
+    }
+
+    const customConfig = require(configPath).webpack;
+    if (typeof customConfig !== 'function') {
+        return config;
+    }
+
+    return customConfig(config, params);
+};
+
 module.exports = ({ isDev }) => {
-    return {
+    const baseConfig = {
         mode: isDev ? 'development' : 'production',
         watch: isDev,
         context: resolveAppPath('frontend'),
@@ -41,4 +56,6 @@ module.exports = ({ isDev }) => {
             '@plesk/ui-library': { amd: 'plesk-ui-library' },
         },
     };
+
+    return loadCustomConfig(baseConfig, { isDev });
 };
