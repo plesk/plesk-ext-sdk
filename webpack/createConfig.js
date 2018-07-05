@@ -20,7 +20,20 @@ module.exports = ({ isDev }) => {
                 {
                     test: /\.js$/i,
                     exclude: /node_modules/,
-                    loader: 'babel-loader',
+                    loader: require.resolve('babel-loader'),
+                    options: {
+                        babelrc: false,
+                        presets: ['env'],
+                        plugins: [
+                            require.resolve('babel-plugin-transform-class-properties'),
+                            [
+                                require.resolve('babel-plugin-transform-react-jsx'),
+                                {
+                                    pragma: 'createElement',
+                                },
+                            ],
+                        ],
+                    },
                 },
             ],
         },
