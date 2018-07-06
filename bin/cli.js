@@ -5,7 +5,7 @@ process.on('unhandledRejection', err => {
 });
 
 require('yargs')
-    .commandDir('../commands')
+    .commandDir('../lib/commands')
     .demandCommand(1)
     .help()
     .parse();
