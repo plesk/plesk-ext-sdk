@@ -1,7 +1,6 @@
 // Copyright 1999-2018. Plesk International GmbH. All rights reserved.
 import path from 'path';
 
-// const basePath = path.resolve(__dirname, '..');
 const resolve = name => path.resolve(__dirname, name);
 
 module.exports = {
