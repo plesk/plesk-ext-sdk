@@ -1,7 +1,7 @@
 // Copyright 1999-2018. Plesk International GmbH. All rights reserved.
 import path from 'path';
 
-const resolve = name => path.resolve(__dirname, name);
+const resolve = relativePath => path.resolve(__dirname, relativePath);
 
 module.exports = {
     mode: 'production',
@@ -24,8 +24,8 @@ module.exports = {
     },
     externals: {
         '@plesk/ui-library': {
-            commonjs: '@plesk/ui-library',
-            commonjs2: '@plesk/ui-library',
+            commonjs: 'plesk-ui-library',
+            commonjs2: 'plesk-ui-library',
             amd: 'plesk-ui-library',
         },
     },
