@@ -10,7 +10,7 @@
     "dev": "webpack --watch --mode development"
   },
   "bin": {
-    "plesk-ext-sdk": "./bin/plesk-ext-sdk.js"
+    "plesk-ext-sdk": "./bin/cli.js"
   },
   "dependencies": {
     "@plesk/ui-library": "^1.4.0",
