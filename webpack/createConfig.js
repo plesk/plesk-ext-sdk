@@ -52,9 +52,6 @@ module.exports = ({ isDev }) => {
                 },
             ],
         },
-        externals: {
-            '@plesk/ui-library': { amd: 'plesk-ui-library' },
-        },
     };
 
     return loadCustomConfig(baseConfig, { isDev });

@@ -4,10 +4,16 @@
   "version": "0.0.0",
   "author": "Plesk Developers <plesk-dev-leads@plesk.com> (https://www.plesk.com/)",
   "license": "Apache-2.0",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack --watch --mode development"
+  },
   "bin": {
     "plesk-ext-sdk": "./bin/plesk-ext-sdk.js"
   },
   "dependencies": {
+    "@plesk/ui-library": "^1.4.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -17,5 +23,8 @@
     "fs-extra": "^6.0.1",
     "webpack": "^4.15.0",
     "yargs": "^12.0.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.0.8"
   }
 }
