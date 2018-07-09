@@ -12,6 +12,11 @@
   "bin": {
     "plesk-ext-sdk": "./bin/cli.js"
   },
+  "files": [
+    "bin",
+    "lib",
+    "dist"
+  ],
   "dependencies": {
     "@plesk/ui-library": "^1.4.0",
     "babel-core": "^6.26.3",
