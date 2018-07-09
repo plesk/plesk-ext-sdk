@@ -12,6 +12,11 @@
   "bin": {
     "plesk-ext-sdk": "./bin/cli.js"
   },
+  "files": [
+    "bin",
+    "lib",
+    "dist"
+  ],
   "dependencies": {
     "@plesk/ui-library": "^1.4.0",
     "babel-core": "^6.26.3",
@@ -21,6 +26,7 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "chalk": "^2.4.1",
+    "clean-webpack-plugin": "^0.1.19",
     "fs-extra": "^6.0.1",
     "jest": "^23.3.0",
     "webpack": "^4.15.0",
