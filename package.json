@@ -1,7 +1,7 @@
 {
   "name": "@plesk/plesk-ext-sdk",
   "description": "Plesk Extension SDK",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Plesk Developers <plesk-dev-leads@plesk.com> (https://www.plesk.com/)",
   "license": "Apache-2.0",
   "main": "dist/main.js",
