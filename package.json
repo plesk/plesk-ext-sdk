@@ -3,11 +3,16 @@
   "description": "Plesk Extension SDK",
   "version": "0.1.0",
   "author": "Plesk Developers <plesk-dev-leads@plesk.com> (https://www.plesk.com/)",
+  "repository": "plesk/plesk-ext-sdk",
+  "bugs": {
+    "url": "https://github.com/plesk/plesk-ext-sdk/issues"
+  },
   "license": "Apache-2.0",
   "main": "dist/main.js",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack --watch --mode development"
+    "dev": "webpack --watch --mode development",
+    "prepublishOnly": "yarn install && yarn build"
   },
   "bin": {
     "plesk-ext-sdk": "./bin/cli.js"
@@ -23,12 +28,16 @@
     "babel-jest": "^23.2.0",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "chalk": "^2.4.1",
     "clean-webpack-plugin": "^0.1.19",
     "fs-extra": "^6.0.1",
+    "html-webpack-plugin": "^3.2.0",
     "jest": "^23.3.0",
+    "react-router-dom": "^4.3.1",
+    "virtual-module-webpack-plugin": "^0.4.0",
     "webpack": "^4.15.0",
     "yargs": "^12.0.1"
   },
