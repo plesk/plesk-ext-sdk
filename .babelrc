@@ -3,7 +3,8 @@
     "env"
   ],
   "plugins": [
-    "babel-plugin-transform-class-properties",
+    "transform-class-properties",
+    "transform-object-rest-spread",
     [
       "transform-react-jsx",
       {
