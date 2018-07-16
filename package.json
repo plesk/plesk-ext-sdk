@@ -8,19 +8,15 @@
     "url": "https://github.com/plesk/plesk-ext-sdk/issues"
   },
   "license": "Apache-2.0",
-  "main": "dist/main.js",
-  "scripts": {
-    "build": "webpack",
-    "dev": "webpack --watch --mode development",
-    "prepublishOnly": "yarn install && yarn build"
-  },
+  "main": "src/index.js",
+  "scripts": {},
   "bin": {
     "plesk-ext-sdk": "./bin/cli.js"
   },
   "files": [
     "bin",
     "lib",
-    "dist"
+    "src"
   ],
   "dependencies": {
     "@plesk/ui-library": "^1.4.0",
@@ -41,7 +37,5 @@
     "webpack": "^4.15.0",
     "yargs": "^12.0.1"
   },
-  "devDependencies": {
-    "webpack-cli": "^3.0.8"
-  }
+  "devDependencies": {}
 }
