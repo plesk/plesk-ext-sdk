@@ -1,0 +1,13 @@
+{
+  "env": {
+    "jest": true
+  },
+  "extends": [
+    "@plesk/eslint-config"
+  ],
+  "settings": {
+    "react": {
+      "pragma": "createElement"
+    }
+  }
+}
