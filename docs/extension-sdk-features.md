@@ -22,7 +22,7 @@ export default class extends Component {
 
     componentDidMount() {
         const { baseUrl } = this.props;
-        axios.get(`${baseUrl}/api/list-data`).then(({ data }) => this.setState({ data }));
+        axios.get(`${baseUrl}/api/list`).then(({ data }) => this.setState({ data }));
     }
 
     render() {
@@ -54,15 +54,15 @@ export default class extends Component {
 }
 ```
 
-Add a new action `listDataAction` in the controller:
+Add a new action `listAction` in the controller:
 
-`src/plib/controllers/IndexController.php`
+`src/plib/controllers/ApiController.php`
 
 ```php
 <?php
 class ApiController extends pm_Controller_Action
 {
-    public function listDataAction()
+    public function listAction()
     {
         $data = [];
         $iconPath = pm_Context::getBaseUrl() . 'images/icon_16.gif';
@@ -81,105 +81,54 @@ class ApiController extends pm_Controller_Action
 
 ## Submit The Form To The Server
 
-Add new action in IndexController, which will handle form submission:
+Add new action in ApiController, which will handle form submission:
 
-`src/plib/controllers/IndexController.php`
+`src/plib/controllers/ApiController.php`
 
 ```php
 <?php
 
 class ApiController extends pm_Controller_Action
 {
-    public function formAction()
+    public function saveAction()
     {
-        $data = json_decode($this->getRequest()->getRawBody(), true);
-
-        if (!$this->getRequest()->isPost()) {
-            $this->_helper->json([
-                'status' => 'error',
-            ]);
-            return;
-        }
-
-        if (empty($data['username'])) {
-            $this->_helper->json([
-                'status' => 'error',
-                'errors' => [
-                    'username' => [
-                        'isEmpty' => 'This field is required.'
+        $this->_helper->serverForm(
+            new Zend_Filter_Input(
+                [
+                    'exampleText' => [
+                        ['StringTrim'],
                     ],
                 ],
-            ]);
-            return;
-        }
-
-        $this->_helper->json(['status' => 'success']);
+                [
+                    'exampleText' => [
+                        'presence' => 'required',
+                        ['StringLength', 3],
+                    ],
+                ]
+            ),
+            function ($args) {
+                pm_Settings::set('exampleText', $args['exampleText']);
+            }
+        );
     }
 }
 ```
 
-Create the component with your form and put it into `index.js`:
+We used action helper `serverForm` for describe input. The second parameter is the callback which will call when a request passes validation.
+
+Now we can write our form. We will use component `ServerForm` for it. Create the component with your form and put it into `index.js`:
 
 `src/frontend/index.js`
 
 ```js
-import { createElement, Component, Form, FormFieldText, Alert, PropTypes } from '@plesk/plesk-ext-sdk';
-import axios from 'axios';
+import { createElement, ServerForm, FormFieldText } from '@plesk/plesk-ext-sdk';
 
-export default class extends Component {
-    static propTypes = {
-        baseUrl: PropTypes.string.isRequired,
-    };
-
-    state = {
-        status: null,
-        state: null,
-        errors: {},
-    };
-
-    handleCancel() {
-        window.location = '/modules/catalog/index.php/installed';
-    }
-
-    handleSubmit = values => {
-        const { baseUrl } = this.props;
-
-        this.setState({
-            state: 'submit',
-        });
-
-        axios.post(`${baseUrl}/api/form-submit`, values).then(({ data }) => {
-            const { status, errors = {} } = data;
-
-            this.setState({
-                state: null,
-                status,
-                errors,
-            });
-        });
-    };
-
-    render() {
-        const { status, state, errors } = this.state;
-
-        if (status === 'success') {
-            return <Alert intent="success">{'Data was successfully submitted.'}</Alert>;
-        }
-
-        return (
-            <Form
-                state={state}
-                errors={errors}
-                applyButton={false}
-                onSubmit={this.handleSubmit}
-                cancelButton={{
-                    onClick: this.handleCancel,
-                }}
-            >
-                <FormFieldText name="username" label="Username" required />
-            </Form>
-        );
-    }
+export default function FormExample() {
+    return (
+        <ServerForm action="/api/save" successUrl="/overview" cancelUrl="/overview">
+            <FormFieldText name="exampleText" label="Example Text" required />
+        </ServerForm>
+    );
 }
 ```
 
