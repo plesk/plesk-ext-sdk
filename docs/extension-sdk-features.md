@@ -93,19 +93,17 @@ class ApiController extends pm_Controller_Action
     public function saveAction()
     {
         $this->_helper->serverForm(
-            new Zend_Filter_Input(
-                [
-                    'exampleText' => [
+            [
+                'exampleText' => [
+                    'required' => true,
+                    'filters' => [
                         ['StringTrim'],
                     ],
-                ],
-                [
-                    'exampleText' => [
-                        'presence' => 'required',
-                        ['StringLength', 3],
+                    'validators' => [
+                        ['StringLength', true, 3],
                     ],
-                ]
-            ),
+                ],
+            ],
             function ($args) {
                 pm_Settings::set('exampleText', $args['exampleText']);
             }
@@ -134,7 +132,55 @@ export default function FormExample() {
 
 ## Translations
 
-This section is under construction.
+For translating text in UI you should use component `Translate` from SDK. Let's update example from Getting Started Guide:
+
+```js
+import { createElement, Component, Alert, Translate, PropTypes } from '@plesk/plesk-ext-sdk';
+import axios from 'axios';
+
+export default class Overview extends Component {
+    static propTypes = {
+        baseUrl: PropTypes.string.isRequired,
+    };
+
+    state = {
+        date: null,
+    };
+
+    componentDidMount() {
+        const { baseUrl } = this.props;
+        axios.get(`${baseUrl}/api/date`).then(({ data }) => this.setState({ date: data }));
+    }
+
+    render() {
+        const { date } = this.state;
+
+        if (!date) {
+            return null;
+        }
+
+        return (
+            <Alert intent="info">
+                <Translate content="Overview.message" params={{ date }} />
+            </Alert>
+        );
+    }
+}
+```
+
+Next you should create file `src/plib/resources/locales/en-US.php` with your texts:
+
+```php
+<?php
+$messages = [
+    'app' => [
+        'Overview' => [
+            'title' => 'Overview',
+            'message' => 'Server time: %%date%%',
+        ],
+    ],
+];
+```
 
 ## Routing
 
@@ -321,6 +367,8 @@ All items in routes should have three properties:
 * `title` - a title of the page
 
 After building and uploading changes to the server, you can view the results by opening a URL like this: `https://my-plesk-server.com:8443/modules/example/index.php/overview`.
+
+If you need to localize page titles you can update your locales. See [Translations Guide](#translations).
 
 ## State Management
 
