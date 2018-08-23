@@ -81,7 +81,7 @@ class ApiController extends pm_Controller_Action
 
 ## Submit The Form To The Server
 
-Add new action in ApiController, which will handle form submission:
+Add a new action in `ApiController`, which will handle form submission:
 
 `src/plib/controllers/ApiController.php`
 
@@ -112,9 +112,9 @@ class ApiController extends pm_Controller_Action
 }
 ```
 
-We used action helper `serverForm` for describe input. The second parameter is the callback which will call when a request passes validation.
+Here, we use the action helper `serverForm` to describe input. The second parameter is the callback, which will be called when a request passes validation.
 
-Now we can write our form. We will use component `ServerForm` for it. Create the component with your form and put it into `index.js`:
+Now we can implement our form. We will use the component `ServerForm` for it. Create the component with your form and put it into `index.js`:
 
 `src/frontend/index.js`
 
@@ -132,7 +132,7 @@ export default function FormExample() {
 
 ## Translations
 
-For translating text in UI you should use component `Translate` from SDK. Let's update example from Getting Started Guide:
+Use the SDK component `Translate` to translate the text in the UI. Let's update the example from the Getting Started Guide:
 
 ```js
 import { createElement, Component, Alert, Translate, PropTypes } from '@plesk/plesk-ext-sdk';
@@ -168,7 +168,7 @@ export default class Overview extends Component {
 }
 ```
 
-Next you should create file `src/plib/resources/locales/en-US.php` with your texts:
+Next, create the file `src/plib/resources/locales/en-US.php` with your texts:
 
 ```php
 <?php
@@ -368,7 +368,7 @@ All items in routes should have three properties:
 
 After building and uploading changes to the server, you can view the results by opening a URL like this: `https://my-plesk-server.com:8443/modules/example/index.php/overview`.
 
-If you need to localize page titles you can update your locales. See [Translations Guide](#translations).
+If you need to localize the page titles, you can update your locales. See [Translations Guide](#translations).
 
 ## State Management
 
