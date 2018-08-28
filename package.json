@@ -10,7 +10,7 @@
   "license": "Apache-2.0",
   "main": "src/index.js",
   "scripts": {
-    "lint": "eslint src"
+    "lint": "eslint src lib"
   },
   "bin": {
     "plesk-ext-sdk": "./bin/cli.js"
