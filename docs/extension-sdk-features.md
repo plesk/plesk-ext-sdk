@@ -22,7 +22,7 @@ export default class extends Component {
 
     componentDidMount() {
         const { baseUrl } = this.props;
-        axios.get(`${baseUrl}/api/list-data`).then(({ data }) => this.setState({ data }));
+        axios.get(`${baseUrl}/api/list`).then(({ data }) => this.setState({ data }));
     }
 
     render() {
@@ -54,15 +54,15 @@ export default class extends Component {
 }
 ```
 
-Add a new action `listDataAction` in the controller:
+Add a new action `listAction` in the controller:
 
-`src/plib/controllers/IndexController.php`
+`src/plib/controllers/ApiController.php`
 
 ```php
 <?php
 class ApiController extends pm_Controller_Action
 {
-    public function listDataAction()
+    public function listAction()
     {
         $data = [];
         $iconPath = pm_Context::getBaseUrl() . 'images/icon_16.gif';
@@ -81,111 +81,106 @@ class ApiController extends pm_Controller_Action
 
 ## Submit The Form To The Server
 
-Add new action in IndexController, which will handle form submission:
+Add a new action in `ApiController`, which will handle form submission:
 
-`src/plib/controllers/IndexController.php`
+`src/plib/controllers/ApiController.php`
 
 ```php
 <?php
 
 class ApiController extends pm_Controller_Action
 {
-    public function formAction()
+    public function saveAction()
     {
-        $data = json_decode($this->getRequest()->getRawBody(), true);
-
-        if (!$this->getRequest()->isPost()) {
-            $this->_helper->json([
-                'status' => 'error',
-            ]);
-            return;
-        }
-
-        if (empty($data['username'])) {
-            $this->_helper->json([
-                'status' => 'error',
-                'errors' => [
-                    'username' => [
-                        'isEmpty' => 'This field is required.'
+        $this->_helper->serverForm(
+            [
+                'exampleText' => [
+                    'required' => true,
+                    'filters' => [
+                        ['StringTrim'],
+                    ],
+                    'validators' => [
+                        ['StringLength', true, 3],
                     ],
                 ],
-            ]);
-            return;
-        }
-
-        $this->_helper->json(['status' => 'success']);
-    }
-}
-```
-
-Create the component with your form and put it into `index.js`:
-
-`src/frontend/index.js`
-
-```js
-import { createElement, Component, Form, FormFieldText, Alert, PropTypes } from '@plesk/plesk-ext-sdk';
-import axios from 'axios';
-
-export default class extends Component {
-    static propTypes = {
-        baseUrl: PropTypes.string.isRequired,
-    };
-
-    state = {
-        status: null,
-        state: null,
-        errors: {},
-    };
-
-    handleCancel() {
-        window.location = '/modules/catalog/index.php/installed';
-    }
-
-    handleSubmit = values => {
-        const { baseUrl } = this.props;
-
-        this.setState({
-            state: 'submit',
-        });
-
-        axios.post(`${baseUrl}/api/form-submit`, values).then(({ data }) => {
-            const { status, errors = {} } = data;
-
-            this.setState({
-                state: null,
-                status,
-                errors,
-            });
-        });
-    };
-
-    render() {
-        const { status, state, errors } = this.state;
-
-        if (status === 'success') {
-            return <Alert intent="success">{'Data was successfully submitted.'}</Alert>;
-        }
-
-        return (
-            <Form
-                state={state}
-                errors={errors}
-                applyButton={false}
-                onSubmit={this.handleSubmit}
-                cancelButton={{
-                    onClick: this.handleCancel,
-                }}
-            >
-                <FormFieldText name="username" label="Username" required />
-            </Form>
+            ],
+            function ($args) {
+                pm_Settings::set('exampleText', $args['exampleText']);
+            }
         );
     }
 }
 ```
 
+Here, we use the action helper `serverForm` to describe input. The second parameter is the callback, which will be called when a request passes validation.
+
+Now we can implement our form. We will use the component `ServerForm` for it. Create the component with your form and put it into `index.js`:
+
+`src/frontend/index.js`
+
+```js
+import { createElement, ServerForm, FormFieldText } from '@plesk/plesk-ext-sdk';
+
+export default function FormExample() {
+    return (
+        <ServerForm action="/api/save" successUrl="/overview" cancelUrl="/overview">
+            <FormFieldText name="exampleText" label="Example Text" required />
+        </ServerForm>
+    );
+}
+```
+
 ## Translations
 
-This section is under construction.
+Use the SDK component `Translate` to translate the text in the UI. Let's update the example from the Getting Started Guide:
+
+```js
+import { createElement, Component, Alert, Translate, PropTypes } from '@plesk/plesk-ext-sdk';
+import axios from 'axios';
+
+export default class Overview extends Component {
+    static propTypes = {
+        baseUrl: PropTypes.string.isRequired,
+    };
+
+    state = {
+        date: null,
+    };
+
+    componentDidMount() {
+        const { baseUrl } = this.props;
+        axios.get(`${baseUrl}/api/date`).then(({ data }) => this.setState({ date: data }));
+    }
+
+    render() {
+        const { date } = this.state;
+
+        if (!date) {
+            return null;
+        }
+
+        return (
+            <Alert intent="info">
+                <Translate content="Overview.message" params={{ date }} />
+            </Alert>
+        );
+    }
+}
+```
+
+Next, create the file `src/plib/resources/locales/en-US.php` with your texts:
+
+```php
+<?php
+$messages = [
+    'app' => [
+        'Overview' => [
+            'title' => 'Overview',
+            'message' => 'Server time: %%date%%',
+        ],
+    ],
+];
+```
 
 ## Routing
 
@@ -372,6 +367,8 @@ All items in routes should have three properties:
 * `title` - a title of the page
 
 After building and uploading changes to the server, you can view the results by opening a URL like this: `https://my-plesk-server.com:8443/modules/example/index.php/overview`.
+
+If you need to localize the page titles, you can update your locales. See [Translations Guide](#translations).
 
 ## State Management
 

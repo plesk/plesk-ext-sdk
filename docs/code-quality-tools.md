@@ -6,11 +6,7 @@ We recommended to use quality tools for monitoring extension code quality.
 
 How to enable ESLint:
 
-1. Install our ESLint rules config
-    ```
-    yarn add @plesk/eslint-config --dev
-    ```
-2. Add helper script to `package.json` file
+1. Add helper script to `package.json` file
     `package.json`
     ```json
     {
@@ -19,7 +15,7 @@ How to enable ESLint:
       }
     }
     ```
-3. Add `.eslintrc` file
+2. Add `.eslintrc` file
     `.eslintrc`
     ```
     {
