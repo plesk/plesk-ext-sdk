@@ -1,5 +1,7 @@
 # Plesk Extension SDK
 
+[![Build Status](https://travis-ci.com/plesk/plesk-ext-sdk.svg?branch=master)](https://travis-ci.com/plesk/plesk-ext-sdk)
+
 It's a toolkit for development extensions for Plesk.
 
 ## Documentation
