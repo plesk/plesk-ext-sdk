@@ -10,7 +10,9 @@
   "license": "Apache-2.0",
   "main": "src/index.js",
   "scripts": {
-    "lint": "eslint src lib"
+    "lint": "eslint src lib",
+    "pretest": "yarn lint",
+    "test": "jest"
   },
   "bin": {
     "plesk-ext-sdk": "./bin/cli.js"
@@ -34,12 +36,23 @@
     "clean-webpack-plugin": "^0.1.19",
     "fs-extra": "^6.0.1",
     "html-webpack-plugin": "^3.2.0",
-    "jest": "^23.3.0",
+    "jest": "^23.5.0",
     "qs": "^6.5.2",
     "react-router-dom": "^4.3.1",
     "virtual-module-webpack-plugin": "^0.4.0",
     "webpack": "^4.15.0",
     "yargs": "^12.0.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "enzyme": "^3.5.0",
+    "enzyme-adapter-react-16": "^1.3.0"
+  },
+  "jest": {
+    "testMatch": [
+      "**/__tests__/**/*.js?(x)"
+    ],
+    "setupFiles": [
+      "<rootDir>/test/setup.js"
+    ]
+  }
 }
