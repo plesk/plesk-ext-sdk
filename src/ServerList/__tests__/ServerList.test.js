@@ -136,4 +136,36 @@ describe('ServerList', () => {
             });
         });
     });
+
+    it('renders correctly with status error', () => {
+        const promise = Promise.resolve({ status: 'error', errors: ['Some error'] });
+        const get = jest.fn(() => promise);
+
+        const wrapper = shallow(
+            <ServerList
+                config={{
+                    baseUrl: '',
+                }}
+                api={{
+                    get,
+                }}
+                columns={[{
+                    key: 'column1',
+                    title: 'Column1',
+                }]}
+                action="/api/test"
+                defaultSortColumn="column1"
+            />
+        );
+
+        expect.assertions(2);
+
+        return promise.then(() => {
+            expect(wrapper.state()).toMatchObject({
+                totalPages: 0,
+            });
+
+            expect(wrapper).toMatchSnapshot();
+        });
+    });
 });

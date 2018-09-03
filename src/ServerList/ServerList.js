@@ -60,11 +60,18 @@ export class ServerList extends Component {
             params.sortDirection = sortDirection;
         }
 
-        api.get(`${config.baseUrl}${action}`, params).then(({ data, totalItems }) => {
-            this.setState({
-                data,
-                totalPages: Math.ceil(totalItems / pageSize),
-            });
+        api.get(`${config.baseUrl}${action}`, params).then(({ status, data, totalItems }) => {
+            if (status === 'error') {
+                this.setState({
+                    pageNumber: 1,
+                    totalPages: 0,
+                });
+            } else {
+                this.setState({
+                    data,
+                    totalPages: Math.ceil(totalItems / pageSize),
+                });
+            }
         });
     };
 
