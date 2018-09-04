@@ -3,6 +3,7 @@
 import { createElement, Component, List, Pagination, PropTypes } from '@plesk/ui-library';
 import { withApi } from '../Api';
 import { withConfig } from '../Config';
+import { withStatusMessages } from '../StatusMessages';
 
 export class ServerList extends Component {
     static propTypes = {
@@ -11,6 +12,9 @@ export class ServerList extends Component {
         }).isRequired,
         api: PropTypes.shape({
             get: PropTypes.func.isRequired,
+        }).isRequired,
+        statusMessages: PropTypes.shape({
+            add: PropTypes.func.isRequired,
         }).isRequired,
         action: PropTypes.string.isRequired,
         columns: PropTypes.arrayOf(PropTypes.shape({
@@ -48,7 +52,7 @@ export class ServerList extends Component {
     }
 
     fetchItems = () => {
-        const { config, action, api } = this.props;
+        const { config, action, api, statusMessages } = this.props;
         const { pageSize, pageNumber, sortColumn, sortDirection } = this.state;
         const params = {
             pageSize,
@@ -60,8 +64,9 @@ export class ServerList extends Component {
             params.sortDirection = sortDirection;
         }
 
-        api.get(`${config.baseUrl}${action}`, params).then(({ status, data, totalItems }) => {
+        api.get(`${config.baseUrl}${action}`, params).then(({ status, data, totalItems, errors }) => {
             if (status === 'error') {
+                errors.forEach(message => statusMessages.add({ intent: 'danger', message }));
                 this.setState({
                     pageNumber: 1,
                     totalPages: 0,
@@ -124,6 +129,7 @@ export class ServerList extends Component {
             config,
             action,
             api,
+            statusMessages,
             columns,
             defaultPageSize,
             defaultSortColumn,
@@ -150,4 +156,4 @@ export class ServerList extends Component {
     }
 }
 
-export default withApi(withConfig(ServerList));
+export default withStatusMessages(withApi(withConfig(ServerList)));

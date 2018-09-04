@@ -20,6 +20,7 @@ describe('ServerList', () => {
                 api={{
                     get,
                 }}
+                statusMessages={{ add: jest.fn() }}
                 columns={[{
                     key: 'column1',
                     title: 'Column1',
@@ -56,6 +57,7 @@ describe('ServerList', () => {
                 api={{
                     get,
                 }}
+                statusMessages={{ add: jest.fn() }}
                 columns={[{
                     key: 'column1',
                     title: 'Column1',
@@ -97,6 +99,7 @@ describe('ServerList', () => {
                 api={{
                     get,
                 }}
+                statusMessages={{ add: jest.fn() }}
                 columns={[{
                     key: 'column1',
                     title: 'Column1',
@@ -140,6 +143,7 @@ describe('ServerList', () => {
     it('renders correctly with status error', () => {
         const promise = Promise.resolve({ status: 'error', errors: ['Some error'] });
         const get = jest.fn(() => promise);
+        const statusMessages = { add: jest.fn() };
 
         const wrapper = shallow(
             <ServerList
@@ -149,6 +153,7 @@ describe('ServerList', () => {
                 api={{
                     get,
                 }}
+                statusMessages={statusMessages}
                 columns={[{
                     key: 'column1',
                     title: 'Column1',
@@ -158,14 +163,18 @@ describe('ServerList', () => {
             />
         );
 
-        expect.assertions(2);
+        expect.assertions(3);
 
         return promise.then(() => {
             expect(wrapper.state()).toMatchObject({
                 totalPages: 0,
             });
-
+            expect(statusMessages.add).toHaveBeenCalledWith({ intent: 'danger', message: 'Some error' });
             expect(wrapper).toMatchSnapshot();
         });
+    });
+
+    it('', () => {
+        
     });
 });

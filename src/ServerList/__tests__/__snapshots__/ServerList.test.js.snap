@@ -44,11 +44,17 @@ ShallowWrapper {
     defaultSortDirection="ASC"
     listProps={Object {}}
     paginationProps={Object {}}
+    statusMessages={
+      Object {
+        "add": [MockFunction],
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -700,11 +706,17 @@ ShallowWrapper {
     defaultSortDirection="ASC"
     listProps={Object {}}
     paginationProps={Object {}}
+    statusMessages={
+      Object {
+        "add": [MockFunction],
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -1354,11 +1366,17 @@ ShallowWrapper {
     defaultSortDirection="ASC"
     listProps={Object {}}
     paginationProps={Object {}}
+    statusMessages={
+      Object {
+        "add": [MockFunction],
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -1638,11 +1656,32 @@ ShallowWrapper {
     defaultSortDirection="ASC"
     listProps={Object {}}
     paginationProps={Object {}}
+    statusMessages={
+      Object {
+        "add": [MockFunction] {
+          "calls": Array [
+            Array [
+              Object {
+                "intent": "danger",
+                "message": "Some error",
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": undefined,
+            },
+          ],
+        },
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
