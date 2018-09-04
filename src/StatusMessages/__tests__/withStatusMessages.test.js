@@ -6,17 +6,13 @@ import StatusMessagesContext from '../StatusMessagesContext';
 import { mount } from 'enzyme';
 
 describe('withStatusMessages', () => {
-    it('qwe', () => {
-        const Component = () => null;
-        const EnchancedComponent = withStatusMessages(Component);
-
-        expect(EnchancedComponent.WrappedComponent).toBe(Component);
-        expect(EnchancedComponent.displayName).toBe('withStatusMessages(Component)');
-    });
-
-    it('asd', () => {
+    it('pass statusMessages property', () => {
         const Component = () => null;
         const EnhancedComponent = withStatusMessages(Component);
+
+        expect(EnhancedComponent.WrappedComponent).toBe(Component);
+        expect(EnhancedComponent.displayName).toBe('withStatusMessages(Component)');
+
         const statusMessages = {};
         const wrapper = mount(
             <StatusMessagesContext.Provider value={statusMessages}>

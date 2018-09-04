@@ -7,32 +7,39 @@ import { shallow } from 'enzyme';
 const generateData = length => [...Array(length)].map((_, index) => ({ key: String(index), column1: index }));
 
 describe('ServerList', () => {
+    let props;
+
+    beforeEach(() => {
+        props = {
+            config: {
+                baseUrl: '',
+            },
+            api: {
+                get: jest.fn(),
+            },
+            statusMessages: { add: jest.fn() },
+            columns: [{
+                key: 'column1',
+                title: 'Column1',
+            }],
+            action: '/api/test',
+        };
+    });
+
     it('renders correctly', () => {
         const data = generateData(5);
         const promise = Promise.resolve({ data, totalItems: data.length });
-        const get = jest.fn(() => promise);
-
+        props.api.get.mockReturnValueOnce(promise);
         const wrapper = shallow(
             <ServerList
-                config={{
-                    baseUrl: '',
-                }}
-                api={{
-                    get,
-                }}
-                statusMessages={{ add: jest.fn() }}
-                columns={[{
-                    key: 'column1',
-                    title: 'Column1',
-                }]}
-                action="/api/test"
+                {...props}
             />
         );
 
         expect.assertions(4);
 
         return promise.then(() => {
-            expect(get).toHaveBeenCalledWith('/api/test', { pageSize: 25, pageNumber: 1 });
+            expect(props.api.get).toHaveBeenCalledWith('/api/test', { pageSize: 25, pageNumber: 1 });
             expect(wrapper.state()).toMatchObject({
                 pageNumber: 1,
                 totalPages: 1,
@@ -44,25 +51,14 @@ describe('ServerList', () => {
         });
     });
 
-    it('render pagination correctly', () => {
+    it('renders pagination correctly', () => {
         const data = generateData(60);
         const promise = Promise.resolve({ data: data.slice(0, 25), totalItems: data.length });
-        const get = jest.fn(() => promise);
-
+        props.api.get.mockReturnValueOnce(promise);
+        props.api.get.mockReturnValueOnce(promise);
         const wrapper = shallow(
             <ServerList
-                config={{
-                    baseUrl: '',
-                }}
-                api={{
-                    get,
-                }}
-                statusMessages={{ add: jest.fn() }}
-                columns={[{
-                    key: 'column1',
-                    title: 'Column1',
-                }]}
-                action="/api/test"
+                {...props}
             />
         );
 
@@ -70,7 +66,7 @@ describe('ServerList', () => {
 
         return promise
             .then(() => {
-                expect(get).toHaveBeenCalledWith('/api/test', { pageSize: 25, pageNumber: 1 });
+                expect(props.api.get).toHaveBeenCalledWith('/api/test', { pageSize: 25, pageNumber: 1 });
                 expect(wrapper.state()).toMatchObject({
                     pageNumber: 1,
                     totalPages: 3,
@@ -78,7 +74,7 @@ describe('ServerList', () => {
                 expect(wrapper).toMatchSnapshot();
 
                 wrapper.find(Pagination).simulate('select', 2);
-                expect(get).toHaveBeenCalledWith('/api/test', { pageSize: 25, pageNumber: 2 });
+                expect(props.api.get).toHaveBeenCalledWith('/api/test', { pageSize: 25, pageNumber: 2 });
                 expect(wrapper.state()).toMatchObject({
                     pageNumber: 2,
                     totalPages: 3,
@@ -86,25 +82,14 @@ describe('ServerList', () => {
             });
     });
 
-    it('render sort correctly', () => {
+    it('renders sort correctly', () => {
         const data = generateData(60);
         const promise = Promise.resolve({ data: data.slice(0, 25), totalItems: data.length });
-        const get = jest.fn(() => promise);
-
+        props.api.get.mockReturnValueOnce(promise);
+        props.api.get.mockReturnValueOnce(promise);
         const wrapper = shallow(
             <ServerList
-                config={{
-                    baseUrl: '',
-                }}
-                api={{
-                    get,
-                }}
-                statusMessages={{ add: jest.fn() }}
-                columns={[{
-                    key: 'column1',
-                    title: 'Column1',
-                }]}
-                action="/api/test"
+                {...props}
                 defaultSortColumn="column1"
             />
         );
@@ -112,7 +97,7 @@ describe('ServerList', () => {
         expect.assertions(5);
 
         return promise.then(() => {
-            expect(get).toHaveBeenCalledWith('/api/test', {
+            expect(props.api.get).toHaveBeenCalledWith('/api/test', {
                 pageSize: 25,
                 pageNumber: 1,
                 sortColumn: 'column1',
@@ -127,7 +112,7 @@ describe('ServerList', () => {
             expect(wrapper).toMatchSnapshot();
 
             wrapper.find(List).simulate('sortChange', { sortColumn: 'column1', sortDirection: 'DESC' });
-            expect(get).toHaveBeenCalledWith('/api/test', {
+            expect(props.api.get).toHaveBeenCalledWith('/api/test', {
                 pageSize: 25,
                 pageNumber: 1,
                 sortColumn: 'column1',
@@ -140,26 +125,12 @@ describe('ServerList', () => {
         });
     });
 
-    it('renders correctly with status error', () => {
+    it('renders errors correctly', () => {
         const promise = Promise.resolve({ status: 'error', errors: ['Some error'] });
-        const get = jest.fn(() => promise);
-        const statusMessages = { add: jest.fn() };
-
+        props.api.get.mockReturnValueOnce(promise);
         const wrapper = shallow(
             <ServerList
-                config={{
-                    baseUrl: '',
-                }}
-                api={{
-                    get,
-                }}
-                statusMessages={statusMessages}
-                columns={[{
-                    key: 'column1',
-                    title: 'Column1',
-                }]}
-                action="/api/test"
-                defaultSortColumn="column1"
+                {...props}
             />
         );
 
@@ -169,12 +140,8 @@ describe('ServerList', () => {
             expect(wrapper.state()).toMatchObject({
                 totalPages: 0,
             });
-            expect(statusMessages.add).toHaveBeenCalledWith({ intent: 'danger', message: 'Some error' });
+            expect(props.statusMessages.add).toHaveBeenCalledWith({ intent: 'danger', message: 'Some error' });
             expect(wrapper).toMatchSnapshot();
         });
-    });
-
-    it('', () => {
-        
     });
 });
