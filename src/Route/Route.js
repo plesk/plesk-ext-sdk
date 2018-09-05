@@ -3,16 +3,17 @@
 import { createElement, Component, PropTypes } from '@plesk/ui-library';
 import { Route as ReactRoute } from 'react-router-dom';
 
-const stripTags = str => str.replace(/<\w+(\s+("[^"]*"|'[^']*'|[^>])+)?(\/)?>|<\/\w+>/gi, '');
+const stripTags = str => (str || '').replace(/<\w+(\s+("[^"]*"|'[^']*'|[^>])+)?(\/)?>|<\/\w+>/gi, '');
 
 const renderTitle = (title = '') => {
+    title = stripTags(title);
     const parts = document.title.split(' - ');
 
     const documentTitle = document.querySelector('title');
     if (documentTitle) {
-        documentTitle.update(
-            title ? `${stripTags(title)} - ${parts[parts.length - 1]}` : `${parts[parts.length - 1]}`
-        );
+        documentTitle.innerHTML = title
+            ? `${title} - ${parts[parts.length - 1]}`
+            : `${parts[parts.length - 1]}`;
     }
 
     const heading = document.querySelector('.heading-area');
@@ -47,9 +48,7 @@ export default class Route extends Component {
         const [route] = routes.filter(route => route.path === path);
         const title = getTranslatedTitle({ route, locale });
 
-        if (title) {
-            renderTitle(title);
-        }
+        renderTitle(title);
     }
 
     render() {
