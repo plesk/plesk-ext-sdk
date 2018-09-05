@@ -84,7 +84,7 @@ export class ServerForm extends Component {
             };
 
             if (Array.isArray(errors)) {
-                errors.map(message => statusMessages.add({ intent: 'danger', message }));
+                errors.forEach(message => statusMessages.add({ intent: 'danger', message }));
             } else {
                 newState.errors = errors;
             }

@@ -1,10 +1,10 @@
 // Copyright 1999-2018. Plesk International GmbH. All rights reserved.
 
 import { createContext } from '@plesk/ui-library';
-import StatusMessages from './StatusMessages';
+import StatusMessagesProxy from './StatusMessagesProxy';
 
 const StatusMessagesContext = createContext(
-    new StatusMessages()
+    new StatusMessagesProxy()
 );
 
 export default StatusMessagesContext;

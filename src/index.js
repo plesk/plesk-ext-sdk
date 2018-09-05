@@ -5,3 +5,4 @@ export { Link } from 'react-router-dom';
 export { ServerForm } from './ServerForm';
 export { ServerList } from './ServerList';
 export { withConfig } from './Config';
+export { withStatusMessages } from './StatusMessages';

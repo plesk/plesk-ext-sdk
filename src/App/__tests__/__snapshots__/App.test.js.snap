@@ -32,44 +32,28 @@ ShallowWrapper {
       "children": <LocaleProvider
         messages={Object {}}
       >
-        <Context.Provider
-          value={
-            StatusMessages {
-              "setToaster": [Function],
-              "toaster": null,
-            }
-          }
+        <BrowserRouter
+          basename=""
         >
-          <BrowserRouter
-            basename=""
-          >
-            <div>
-              <Switch>
-                <Route
-                  componentPath="Index"
-                  path="/"
-                  render={[Function]}
-                  routes={
-                    Array [
-                      Object {
-                        "component": [Function],
-                        "componentPath": "Index",
-                        "path": "/",
-                      },
-                    ]
-                  }
-                />
-              </Switch>
-              <Toaster
-                baseClassName="pul-toaster"
-                className={null}
-                position="top"
-                toasts={null}
+          <withRouter(StatusMessages)>
+            <Switch>
+              <Route
+                componentPath="Index"
+                path="/"
+                render={[Function]}
+                routes={
+                  Array [
+                    Object {
+                      "component": [Function],
+                      "componentPath": "Index",
+                      "path": "/",
+                    },
+                  ]
+                }
               />
-              <withRouter() />
-            </div>
-          </BrowserRouter>
-        </Context.Provider>
+            </Switch>
+          </withRouter(StatusMessages)>
+        </BrowserRouter>
       </LocaleProvider>,
       "value": Object {
         "baseUrl": "",
@@ -81,95 +65,86 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": <Context.Provider
-          value={
-            StatusMessages {
-              "setToaster": [Function],
-              "toaster": null,
-            }
-          }
+        "children": <BrowserRouter
+          basename=""
         >
-          <BrowserRouter
-            basename=""
-          >
-            <div>
-              <Switch>
-                <Route
-                  componentPath="Index"
-                  path="/"
-                  render={[Function]}
-                  routes={
-                    Array [
-                      Object {
-                        "component": [Function],
-                        "componentPath": "Index",
-                        "path": "/",
-                      },
-                    ]
-                  }
-                />
-              </Switch>
-              <Toaster
-                baseClassName="pul-toaster"
-                className={null}
-                position="top"
-                toasts={null}
+          <withRouter(StatusMessages)>
+            <Switch>
+              <Route
+                componentPath="Index"
+                path="/"
+                render={[Function]}
+                routes={
+                  Array [
+                    Object {
+                      "component": [Function],
+                      "componentPath": "Index",
+                      "path": "/",
+                    },
+                  ]
+                }
               />
-              <withRouter() />
-            </div>
-          </BrowserRouter>
-        </Context.Provider>,
+            </Switch>
+          </withRouter(StatusMessages)>
+        </BrowserRouter>,
         "messages": Object {},
       },
       "ref": null,
       "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
-          "children": <BrowserRouter
-            basename=""
-          >
-            <div>
-              <Switch>
-                <Route
-                  componentPath="Index"
-                  path="/"
-                  render={[Function]}
-                  routes={
-                    Array [
-                      Object {
-                        "component": [Function],
-                        "componentPath": "Index",
-                        "path": "/",
-                      },
-                    ]
-                  }
-                />
-              </Switch>
-              <Toaster
-                baseClassName="pul-toaster"
-                className={null}
-                position="top"
-                toasts={null}
+          "basename": "",
+          "children": <withRouter(StatusMessages)>
+            <Switch>
+              <Route
+                componentPath="Index"
+                path="/"
+                render={[Function]}
+                routes={
+                  Array [
+                    Object {
+                      "component": [Function],
+                      "componentPath": "Index",
+                      "path": "/",
+                    },
+                  ]
+                }
               />
-              <withRouter() />
-            </div>
-          </BrowserRouter>,
-          "value": StatusMessages {
-            "setToaster": [Function],
-            "toaster": null,
-          },
+            </Switch>
+          </withRouter(StatusMessages)>,
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
-            "basename": "",
-            "children": <div>
-              <Switch>
+            "children": <Switch>
+              <Route
+                componentPath="Index"
+                path="/"
+                render={[Function]}
+                routes={
+                  Array [
+                    Object {
+                      "component": [Function],
+                      "componentPath": "Index",
+                      "path": "/",
+                    },
+                  ]
+                }
+              />
+            </Switch>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
                 <Route
                   componentPath="Index"
                   path="/"
@@ -183,151 +158,37 @@ ShallowWrapper {
                       },
                     ]
                   }
-                />
-              </Switch>
-              <Toaster
-                baseClassName="pul-toaster"
-                className={null}
-                position="top"
-                toasts={null}
-              />
-              <withRouter() />
-            </div>,
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <Switch>
-                  <Route
-                    componentPath="Index"
-                    path="/"
-                    render={[Function]}
-                    routes={
-                      Array [
-                        Object {
-                          "component": [Function],
-                          "componentPath": "Index",
-                          "path": "/",
-                        },
-                      ]
-                    }
-                  />
-                </Switch>,
-                <Toaster
-                  baseClassName="pul-toaster"
-                  className={null}
-                  position="top"
-                  toasts={null}
                 />,
-                <withRouter() />,
               ],
             },
             "ref": null,
             "rendered": Array [
               Object {
                 "instance": null,
-                "key": undefined,
+                "key": "/",
                 "nodeType": "class",
                 "props": Object {
-                  "children": Array [
-                    <Route
-                      componentPath="Index"
-                      path="/"
-                      render={[Function]}
-                      routes={
-                        Array [
-                          Object {
-                            "component": [Function],
-                            "componentPath": "Index",
-                            "path": "/",
-                          },
-                        ]
-                      }
-                    />,
-                  ],
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": "/",
-                    "nodeType": "class",
-                    "props": Object {
+                  "componentPath": "Index",
+                  "path": "/",
+                  "render": [Function],
+                  "routes": Array [
+                    Object {
+                      "component": [Function],
                       "componentPath": "Index",
                       "path": "/",
-                      "render": [Function],
-                      "routes": Array [
-                        Object {
-                          "component": [Function],
-                          "componentPath": "Index",
-                          "path": "/",
-                        },
-                      ],
                     },
-                    "ref": null,
-                    "rendered": null,
-                    "type": [Function],
-                  },
-                ],
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "baseClassName": "pul-toaster",
-                  "className": null,
-                  "position": "top",
-                  "toasts": null,
+                  ],
                 },
-                "ref": [Function],
-                "rendered": null,
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {},
                 "ref": null,
                 "rendered": null,
                 "type": [Function],
               },
             ],
-            "type": "div",
+            "type": [Function],
           },
           "type": [Function],
         },
-        "type": Object {
-          "$$typeof": Symbol(react.provider),
-          "_context": Object {
-            "$$typeof": Symbol(react.context),
-            "Consumer": [Circular],
-            "Provider": [Circular],
-            "_calculateChangedBits": null,
-            "_changedBits": 0,
-            "_changedBits2": 0,
-            "_currentRenderer": null,
-            "_currentRenderer2": null,
-            "_currentValue": StatusMessages {
-              "setToaster": [Function],
-              "toaster": null,
-            },
-            "_currentValue2": StatusMessages {
-              "setToaster": [Function],
-              "toaster": null,
-            },
-            "_defaultValue": StatusMessages {
-              "setToaster": [Function],
-              "toaster": null,
-            },
-          },
-        },
+        "type": [Function],
       },
       "type": [Function],
     },
@@ -357,44 +218,28 @@ ShallowWrapper {
         "children": <LocaleProvider
           messages={Object {}}
         >
-          <Context.Provider
-            value={
-              StatusMessages {
-                "setToaster": [Function],
-                "toaster": null,
-              }
-            }
+          <BrowserRouter
+            basename=""
           >
-            <BrowserRouter
-              basename=""
-            >
-              <div>
-                <Switch>
-                  <Route
-                    componentPath="Index"
-                    path="/"
-                    render={[Function]}
-                    routes={
-                      Array [
-                        Object {
-                          "component": [Function],
-                          "componentPath": "Index",
-                          "path": "/",
-                        },
-                      ]
-                    }
-                  />
-                </Switch>
-                <Toaster
-                  baseClassName="pul-toaster"
-                  className={null}
-                  position="top"
-                  toasts={null}
+            <withRouter(StatusMessages)>
+              <Switch>
+                <Route
+                  componentPath="Index"
+                  path="/"
+                  render={[Function]}
+                  routes={
+                    Array [
+                      Object {
+                        "component": [Function],
+                        "componentPath": "Index",
+                        "path": "/",
+                      },
+                    ]
+                  }
                 />
-                <withRouter() />
-              </div>
-            </BrowserRouter>
-          </Context.Provider>
+              </Switch>
+            </withRouter(StatusMessages)>
+          </BrowserRouter>
         </LocaleProvider>,
         "value": Object {
           "baseUrl": "",
@@ -406,95 +251,86 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": <Context.Provider
-            value={
-              StatusMessages {
-                "setToaster": [Function],
-                "toaster": null,
-              }
-            }
+          "children": <BrowserRouter
+            basename=""
           >
-            <BrowserRouter
-              basename=""
-            >
-              <div>
-                <Switch>
-                  <Route
-                    componentPath="Index"
-                    path="/"
-                    render={[Function]}
-                    routes={
-                      Array [
-                        Object {
-                          "component": [Function],
-                          "componentPath": "Index",
-                          "path": "/",
-                        },
-                      ]
-                    }
-                  />
-                </Switch>
-                <Toaster
-                  baseClassName="pul-toaster"
-                  className={null}
-                  position="top"
-                  toasts={null}
+            <withRouter(StatusMessages)>
+              <Switch>
+                <Route
+                  componentPath="Index"
+                  path="/"
+                  render={[Function]}
+                  routes={
+                    Array [
+                      Object {
+                        "component": [Function],
+                        "componentPath": "Index",
+                        "path": "/",
+                      },
+                    ]
+                  }
                 />
-                <withRouter() />
-              </div>
-            </BrowserRouter>
-          </Context.Provider>,
+              </Switch>
+            </withRouter(StatusMessages)>
+          </BrowserRouter>,
           "messages": Object {},
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
-            "children": <BrowserRouter
-              basename=""
-            >
-              <div>
-                <Switch>
-                  <Route
-                    componentPath="Index"
-                    path="/"
-                    render={[Function]}
-                    routes={
-                      Array [
-                        Object {
-                          "component": [Function],
-                          "componentPath": "Index",
-                          "path": "/",
-                        },
-                      ]
-                    }
-                  />
-                </Switch>
-                <Toaster
-                  baseClassName="pul-toaster"
-                  className={null}
-                  position="top"
-                  toasts={null}
+            "basename": "",
+            "children": <withRouter(StatusMessages)>
+              <Switch>
+                <Route
+                  componentPath="Index"
+                  path="/"
+                  render={[Function]}
+                  routes={
+                    Array [
+                      Object {
+                        "component": [Function],
+                        "componentPath": "Index",
+                        "path": "/",
+                      },
+                    ]
+                  }
                 />
-                <withRouter() />
-              </div>
-            </BrowserRouter>,
-            "value": StatusMessages {
-              "setToaster": [Function],
-              "toaster": null,
-            },
+              </Switch>
+            </withRouter(StatusMessages)>,
           },
           "ref": null,
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
-              "basename": "",
-              "children": <div>
-                <Switch>
+              "children": <Switch>
+                <Route
+                  componentPath="Index"
+                  path="/"
+                  render={[Function]}
+                  routes={
+                    Array [
+                      Object {
+                        "component": [Function],
+                        "componentPath": "Index",
+                        "path": "/",
+                      },
+                    ]
+                  }
+                />
+              </Switch>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
                   <Route
                     componentPath="Index"
                     path="/"
@@ -508,151 +344,37 @@ ShallowWrapper {
                         },
                       ]
                     }
-                  />
-                </Switch>
-                <Toaster
-                  baseClassName="pul-toaster"
-                  className={null}
-                  position="top"
-                  toasts={null}
-                />
-                <withRouter() />
-              </div>,
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <Switch>
-                    <Route
-                      componentPath="Index"
-                      path="/"
-                      render={[Function]}
-                      routes={
-                        Array [
-                          Object {
-                            "component": [Function],
-                            "componentPath": "Index",
-                            "path": "/",
-                          },
-                        ]
-                      }
-                    />
-                  </Switch>,
-                  <Toaster
-                    baseClassName="pul-toaster"
-                    className={null}
-                    position="top"
-                    toasts={null}
                   />,
-                  <withRouter() />,
                 ],
               },
               "ref": null,
               "rendered": Array [
                 Object {
                   "instance": null,
-                  "key": undefined,
+                  "key": "/",
                   "nodeType": "class",
                   "props": Object {
-                    "children": Array [
-                      <Route
-                        componentPath="Index"
-                        path="/"
-                        render={[Function]}
-                        routes={
-                          Array [
-                            Object {
-                              "component": [Function],
-                              "componentPath": "Index",
-                              "path": "/",
-                            },
-                          ]
-                        }
-                      />,
-                    ],
-                  },
-                  "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": "/",
-                      "nodeType": "class",
-                      "props": Object {
+                    "componentPath": "Index",
+                    "path": "/",
+                    "render": [Function],
+                    "routes": Array [
+                      Object {
+                        "component": [Function],
                         "componentPath": "Index",
                         "path": "/",
-                        "render": [Function],
-                        "routes": Array [
-                          Object {
-                            "component": [Function],
-                            "componentPath": "Index",
-                            "path": "/",
-                          },
-                        ],
                       },
-                      "ref": null,
-                      "rendered": null,
-                      "type": [Function],
-                    },
-                  ],
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "baseClassName": "pul-toaster",
-                    "className": null,
-                    "position": "top",
-                    "toasts": null,
+                    ],
                   },
-                  "ref": [Function],
-                  "rendered": null,
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {},
                   "ref": null,
                   "rendered": null,
                   "type": [Function],
                 },
               ],
-              "type": "div",
+              "type": [Function],
             },
             "type": [Function],
           },
-          "type": Object {
-            "$$typeof": Symbol(react.provider),
-            "_context": Object {
-              "$$typeof": Symbol(react.context),
-              "Consumer": [Circular],
-              "Provider": [Circular],
-              "_calculateChangedBits": null,
-              "_changedBits": 0,
-              "_changedBits2": 0,
-              "_currentRenderer": null,
-              "_currentRenderer2": null,
-              "_currentValue": StatusMessages {
-                "setToaster": [Function],
-                "toaster": null,
-              },
-              "_currentValue2": StatusMessages {
-                "setToaster": [Function],
-                "toaster": null,
-              },
-              "_defaultValue": StatusMessages {
-                "setToaster": [Function],
-                "toaster": null,
-              },
-            },
-          },
+          "type": [Function],
         },
         "type": [Function],
       },

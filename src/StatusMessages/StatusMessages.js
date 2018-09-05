@@ -1,41 +1,40 @@
 // Copyright 1999-2018. Plesk International GmbH. All rights reserved.
 
-export default class StatusMessages {
-    toaster = null;
+import { createElement, PureComponent, Toaster, PropTypes } from '@plesk/ui-library';
+import StatusMessagesProxy from './StatusMessagesProxy';
+import StatusMessagesContext from './StatusMessagesContext';
+import { withRouter } from 'react-router-dom';
 
-    setToaster = toaster => {
-        this.toaster = toaster;
+export class StatusMessages extends PureComponent {
+    static propTypes = {
+        children: PropTypes.node.isRequired,
+        location: PropTypes.shape({
+            pathname: PropTypes.string.isRequired,
+        }).isRequired,
+        statusMessages: PropTypes.shape({
+            clear: PropTypes.func.isRequired,
+            setToaster: PropTypes.func.isRequired,
+        }),
     };
 
-    add(...args) {
-        if (!this.toaster) {
-            return false;
-        }
+    static defaultProps = {
+        statusMessages: new StatusMessagesProxy(),
+    };
 
-        return this.toaster.add(...args);
+    componentDidUpdate(prevProps) {
+        if (prevProps.location.pathname !== this.props.location.pathname) {
+            this.props.statusMessages.clear();
+        }
     }
 
-    update(...args) {
-        if (!this.toaster) {
-            return false;
-        }
-
-        return this.toaster.update(...args);
-    }
-
-    remove(...args) {
-        if (!this.toaster) {
-            return;
-        }
-
-        this.toaster.remove(...args);
-    }
-
-    clear() {
-        if (!this.toaster) {
-            return;
-        }
-
-        this.toaster.clear();
+    render() {
+        return (
+            <StatusMessagesContext.Provider value={this.props.statusMessages}>
+                {this.props.children}
+                <Toaster ref={this.props.statusMessages.setToaster} />
+            </StatusMessagesContext.Provider>
+        );
     }
 }
+
+export default withRouter(StatusMessages);
