@@ -362,15 +362,16 @@ module.exports = {
 };
 ```
 
-All items in routes should have three properties:
+All items in routes must have two required properties:
 
 * `path` - a valid URL (relative to the extension's base URL)
 * `component` - a path to the file with the component without extension and relative to the `src/frontend` directory
-* `title` - a title of the page
+
+Optional properties:
+* `title` - a title of the page. If you need to localize the page titles, see [Translations Guide](#translations).
+* `exact` - when true, will only match if the path matches the location.pathname exactly.
 
 After building and uploading changes to the server, you can view the results by opening a URL like this: `https://my-plesk-server.com:8443/modules/example/index.php/overview`.
-
-If you need to localize the page titles, you can update your locales. See [Translations Guide](#translations).
 
 ## State Management
 
