@@ -3,3 +3,4 @@
 export { default } from './StatusMessages';
 export { default as StatusMessagesContext } from './StatusMessagesContext';
 export { default as withStatusMessages } from './withStatusMessages';
+export { default as ClearStatusMessages } from './ClearStatusMessages';

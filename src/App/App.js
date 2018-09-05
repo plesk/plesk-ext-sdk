@@ -1,10 +1,14 @@
 // Copyright 1999-2018. Plesk International GmbH. All rights reserved.
 
 import { createElement, Component, LocaleProvider, PropTypes, Toaster } from '@plesk/ui-library';
-import { BrowserRouter, Switch } from 'react-router-dom';
+import { BrowserRouter, Switch, withRouter } from 'react-router-dom';
 import { ConfigContext } from '../Config';
-import StatusMessages, { StatusMessagesContext } from '../StatusMessages';
+import StatusMessages, { StatusMessagesContext, ClearStatusMessages } from '../StatusMessages';
 import Route from '../Route';
+
+const ClearStatusMessagesWhenLocationChange = withRouter(props => (
+    <ClearStatusMessages {...props} when={({ props, prevProps }) => prevProps.location.pathname !== props.location.pathname} />
+));
 
 export default class App extends Component {
     static propTypes = {
@@ -40,6 +44,7 @@ export default class App extends Component {
                                     ))}
                                 </Switch>
                                 <Toaster ref={this.statusMessages.setToaster} />
+                                <ClearStatusMessagesWhenLocationChange />
                             </div>
                         </BrowserRouter>
                     </StatusMessagesContext.Provider>
