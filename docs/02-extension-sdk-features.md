@@ -182,6 +182,8 @@ $messages = [
 ];
 ```
 
+Pay attention on the key `title`. If component `Overview` used as a component for a route then this key will be used as the page title.
+
 ## Routing
 
 In the previous examples there are three different scenarios: static page, list with data and form. If you want to have all of these scenarios in your extension then you should create three different pages for it. To create pages, `plesk-ext-sdk` offers `routes`. It maps a URL the user opens in a browser to a corresponding component that must be rendered. Let's create three components using code from previous examples:
