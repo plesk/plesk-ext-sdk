@@ -10,7 +10,9 @@
   "license": "Apache-2.0",
   "main": "src/index.js",
   "scripts": {
-    "lint": "eslint src lib",
+    "lint:es": "eslint src lib",
+    "lint:md": "remark --quiet --frail .",
+    "lint": "yarn lint:es && yarn lint:md",
     "pretest": "yarn lint",
     "test": "jest"
   },
@@ -45,11 +47,13 @@
   },
   "devDependencies": {
     "enzyme": "^3.5.0",
-    "enzyme-adapter-react-16": "^1.4.0"
+    "enzyme-adapter-react-16": "^1.4.0",
+    "remark-cli": "^5.0.0",
+    "remark-validate-links": "^7.1.0"
   },
   "jest": {
     "testMatch": [
-      "**/__tests__/**/*.test.js?(x)"
+      "**/*.test.js?(x)"
     ],
     "setupFiles": [
       "<rootDir>/test/setup.js"
