@@ -2,11 +2,11 @@
 
 import { createElement } from '@plesk/ui-library';
 import App from '../App';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 describe('App', () => {
     it('renders correctly', () => {
-        mount(
+        const wrapper = shallow(
             <App
                 baseUrl=""
                 locale={{}}
@@ -17,5 +17,6 @@ describe('App', () => {
                 }]}
             />
         );
+        expect(wrapper).toMatchSnapshot();
     });
 });
