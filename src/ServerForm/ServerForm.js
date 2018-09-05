@@ -1,17 +1,19 @@
 // Copyright 1999-2018. Plesk International GmbH. All rights reserved.
 
-import { createElement, Component, Form, PropTypes, Alert } from '@plesk/ui-library';
+import { createElement, Component, Form, PropTypes } from '@plesk/ui-library';
 import { withRouter } from 'react-router-dom';
 import { withApi } from '../Api';
 import { withConfig } from '../Config';
+import { withStatusMessages } from '../StatusMessages';
 
-class ServerForm extends Component {
+export class ServerForm extends Component {
     static propTypes = {
         config: PropTypes.shape({
             baseUrl: PropTypes.string.isRequired,
         }).isRequired,
         action: PropTypes.string.isRequired,
         successUrl: PropTypes.string,
+        successMessage: PropTypes.string,
         cancelUrl: PropTypes.string,
         children: PropTypes.node,
         history: PropTypes.shape({
@@ -19,6 +21,9 @@ class ServerForm extends Component {
         }).isRequired,
         api: PropTypes.shape({
             post: PropTypes.func.isRequired,
+        }).isRequired,
+        statusMessages: PropTypes.shape({
+            add: PropTypes.func.isRequired,
         }).isRequired,
         onSubmit: PropTypes.func,
         onSuccess: PropTypes.func,
@@ -35,6 +40,7 @@ class ServerForm extends Component {
 
     static defaultProps = {
         successUrl: null,
+        successMessage: null,
         cancelUrl: null,
         children: null,
         onSubmit: null,
@@ -62,7 +68,7 @@ class ServerForm extends Component {
     };
 
     handleSubmit = values => {
-        const { config, action, onSubmit, api } = this.props;
+        const { config, action, onSubmit, api, statusMessages } = this.props;
 
         if (typeof onSubmit === 'function' && onSubmit(values) === false) {
             return;
@@ -73,27 +79,33 @@ class ServerForm extends Component {
         });
 
         api.post(`${config.baseUrl}${action}`, values).then(({ status, errors, data }) => {
-            if (status === 'success') {
-                this.setState({
-                    state: null,
-                    errors,
-                }, () => {
-                    const { successUrl, history, onSuccess } = this.props;
+            const newState = {
+                state: null,
+            };
+
+            if (Array.isArray(errors)) {
+                errors.forEach(message => statusMessages.add({ intent: 'danger', message }));
+            } else {
+                newState.errors = errors;
+            }
+
+            this.setState(newState, () => {
+                if (status === 'success') {
+                    const { successUrl, successMessage, history, onSuccess } = this.props;
 
                     if (typeof onSuccess === 'function' && onSuccess(data) === false) {
                         return;
                     }
 
+                    if (successMessage) {
+                        statusMessages.add({ intent: 'success', message: successMessage });
+                    }
+
                     if (successUrl) {
                         history.push(successUrl);
                     }
-                });
-            } else {
-                this.setState({
-                    state: null,
-                    errors,
-                });
-            }
+                }
+            });
         });
     };
 
@@ -118,27 +130,20 @@ class ServerForm extends Component {
 
     render() {
         const { state, errors } = this.state;
-        const { children, config, successUrl, cancelUrl, history, onSubmit, cancelButton, onSuccess, api, staticContext, ...props } = this.props;
-        const formErrors = errors && !Array.isArray(errors) ? errors : null;
+        const { children, config, successUrl, successMessage, cancelUrl, history, onSubmit, cancelButton, onSuccess, api, statusMessages, staticContext, ...props } = this.props;
 
         return (
             <Form
                 state={state}
-                errors={formErrors}
+                errors={errors}
                 {...props}
                 onSubmit={this.handleSubmit}
                 cancelButton={this.prepareCancelButton()}
             >
-                {Array.isArray(errors) && errors.map((error, index) => (
-                    // eslint-disable-next-line react/no-array-index-key
-                    <Alert key={index} intent="danger">
-                        {error}
-                    </Alert>
-                ))}
                 {children}
             </Form>
         );
     }
 }
 
-export default withRouter(withApi(withConfig(ServerForm)));
+export default withStatusMessages(withRouter(withApi(withConfig(ServerForm))));

@@ -1,1315 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ServerList render pagination correctly 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ServerList
-    action="/api/test"
-    api={
-      Object {
-        "get": [MockFunction] {
-          "calls": Array [
-            Array [
-              "/api/test",
-              Object {
-                "pageNumber": 1,
-                "pageSize": 25,
-              },
-            ],
-          ],
-          "results": Array [
-            Object {
-              "isThrow": false,
-              "value": Promise {},
-            },
-          ],
-        },
-      }
-    }
-    columns={
-      Array [
-        Object {
-          "key": "column1",
-          "title": "Column1",
-        },
-      ]
-    }
-    config={
-      Object {
-        "baseUrl": "",
-      }
-    }
-    defaultPageSize={25}
-    defaultSortColumn={null}
-    defaultSortDirection="ASC"
-    listProps={Object {}}
-    paginationProps={Object {}}
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "host",
-    "props": Object {
-      "children": Array [
-        <List
-          baseClassName="pul-list"
-          className={null}
-          columns={
-            Array [
-              Object {
-                "key": "column1",
-                "title": "Column1",
-              },
-            ]
-          }
-          data={
-            Array [
-              Object {
-                "column1": 0,
-                "key": "0",
-              },
-              Object {
-                "column1": 1,
-                "key": "1",
-              },
-              Object {
-                "column1": 2,
-                "key": "2",
-              },
-              Object {
-                "column1": 3,
-                "key": "3",
-              },
-              Object {
-                "column1": 4,
-                "key": "4",
-              },
-              Object {
-                "column1": 5,
-                "key": "5",
-              },
-              Object {
-                "column1": 6,
-                "key": "6",
-              },
-              Object {
-                "column1": 7,
-                "key": "7",
-              },
-              Object {
-                "column1": 8,
-                "key": "8",
-              },
-              Object {
-                "column1": 9,
-                "key": "9",
-              },
-              Object {
-                "column1": 10,
-                "key": "10",
-              },
-              Object {
-                "column1": 11,
-                "key": "11",
-              },
-              Object {
-                "column1": 12,
-                "key": "12",
-              },
-              Object {
-                "column1": 13,
-                "key": "13",
-              },
-              Object {
-                "column1": 14,
-                "key": "14",
-              },
-              Object {
-                "column1": 15,
-                "key": "15",
-              },
-              Object {
-                "column1": 16,
-                "key": "16",
-              },
-              Object {
-                "column1": 17,
-                "key": "17",
-              },
-              Object {
-                "column1": 18,
-                "key": "18",
-              },
-              Object {
-                "column1": 19,
-                "key": "19",
-              },
-              Object {
-                "column1": 20,
-                "key": "20",
-              },
-              Object {
-                "column1": 21,
-                "key": "21",
-              },
-              Object {
-                "column1": 22,
-                "key": "22",
-              },
-              Object {
-                "column1": 23,
-                "key": "23",
-              },
-              Object {
-                "column1": 24,
-                "key": "24",
-              },
-            ]
-          }
-          onSelectionChange={null}
-          onSortChange={[Function]}
-          rowKey="key"
-          selection={Array []}
-          sortColumn={null}
-          sortDirection="ASC"
-        />,
-        <Pagination
-          baseClassName="pul-pagination"
-          className={null}
-          current={1}
-          isShowNavigationButtons={true}
-          isShowPageButtons={null}
-          maxPageButtons={11}
-          onSelect={[Function]}
-          total={3}
-        />,
-      ],
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "baseClassName": "pul-list",
-          "className": null,
-          "columns": Array [
-            Object {
-              "key": "column1",
-              "title": "Column1",
-            },
-          ],
-          "data": Array [
-            Object {
-              "column1": 0,
-              "key": "0",
-            },
-            Object {
-              "column1": 1,
-              "key": "1",
-            },
-            Object {
-              "column1": 2,
-              "key": "2",
-            },
-            Object {
-              "column1": 3,
-              "key": "3",
-            },
-            Object {
-              "column1": 4,
-              "key": "4",
-            },
-            Object {
-              "column1": 5,
-              "key": "5",
-            },
-            Object {
-              "column1": 6,
-              "key": "6",
-            },
-            Object {
-              "column1": 7,
-              "key": "7",
-            },
-            Object {
-              "column1": 8,
-              "key": "8",
-            },
-            Object {
-              "column1": 9,
-              "key": "9",
-            },
-            Object {
-              "column1": 10,
-              "key": "10",
-            },
-            Object {
-              "column1": 11,
-              "key": "11",
-            },
-            Object {
-              "column1": 12,
-              "key": "12",
-            },
-            Object {
-              "column1": 13,
-              "key": "13",
-            },
-            Object {
-              "column1": 14,
-              "key": "14",
-            },
-            Object {
-              "column1": 15,
-              "key": "15",
-            },
-            Object {
-              "column1": 16,
-              "key": "16",
-            },
-            Object {
-              "column1": 17,
-              "key": "17",
-            },
-            Object {
-              "column1": 18,
-              "key": "18",
-            },
-            Object {
-              "column1": 19,
-              "key": "19",
-            },
-            Object {
-              "column1": 20,
-              "key": "20",
-            },
-            Object {
-              "column1": 21,
-              "key": "21",
-            },
-            Object {
-              "column1": 22,
-              "key": "22",
-            },
-            Object {
-              "column1": 23,
-              "key": "23",
-            },
-            Object {
-              "column1": 24,
-              "key": "24",
-            },
-          ],
-          "onSelectionChange": null,
-          "onSortChange": [Function],
-          "rowKey": "key",
-          "selection": Array [],
-          "sortColumn": null,
-          "sortDirection": "ASC",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "baseClassName": "pul-pagination",
-          "className": null,
-          "current": 1,
-          "isShowNavigationButtons": true,
-          "isShowPageButtons": null,
-          "maxPageButtons": 11,
-          "onSelect": [Function],
-          "total": 3,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <List
-            baseClassName="pul-list"
-            className={null}
-            columns={
-              Array [
-                Object {
-                  "key": "column1",
-                  "title": "Column1",
-                },
-              ]
-            }
-            data={
-              Array [
-                Object {
-                  "column1": 0,
-                  "key": "0",
-                },
-                Object {
-                  "column1": 1,
-                  "key": "1",
-                },
-                Object {
-                  "column1": 2,
-                  "key": "2",
-                },
-                Object {
-                  "column1": 3,
-                  "key": "3",
-                },
-                Object {
-                  "column1": 4,
-                  "key": "4",
-                },
-                Object {
-                  "column1": 5,
-                  "key": "5",
-                },
-                Object {
-                  "column1": 6,
-                  "key": "6",
-                },
-                Object {
-                  "column1": 7,
-                  "key": "7",
-                },
-                Object {
-                  "column1": 8,
-                  "key": "8",
-                },
-                Object {
-                  "column1": 9,
-                  "key": "9",
-                },
-                Object {
-                  "column1": 10,
-                  "key": "10",
-                },
-                Object {
-                  "column1": 11,
-                  "key": "11",
-                },
-                Object {
-                  "column1": 12,
-                  "key": "12",
-                },
-                Object {
-                  "column1": 13,
-                  "key": "13",
-                },
-                Object {
-                  "column1": 14,
-                  "key": "14",
-                },
-                Object {
-                  "column1": 15,
-                  "key": "15",
-                },
-                Object {
-                  "column1": 16,
-                  "key": "16",
-                },
-                Object {
-                  "column1": 17,
-                  "key": "17",
-                },
-                Object {
-                  "column1": 18,
-                  "key": "18",
-                },
-                Object {
-                  "column1": 19,
-                  "key": "19",
-                },
-                Object {
-                  "column1": 20,
-                  "key": "20",
-                },
-                Object {
-                  "column1": 21,
-                  "key": "21",
-                },
-                Object {
-                  "column1": 22,
-                  "key": "22",
-                },
-                Object {
-                  "column1": 23,
-                  "key": "23",
-                },
-                Object {
-                  "column1": 24,
-                  "key": "24",
-                },
-              ]
-            }
-            onSelectionChange={null}
-            onSortChange={[Function]}
-            rowKey="key"
-            selection={Array []}
-            sortColumn={null}
-            sortDirection="ASC"
-          />,
-          <Pagination
-            baseClassName="pul-pagination"
-            className={null}
-            current={1}
-            isShowNavigationButtons={true}
-            isShowPageButtons={null}
-            maxPageButtons={11}
-            onSelect={[Function]}
-            total={3}
-          />,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "baseClassName": "pul-list",
-            "className": null,
-            "columns": Array [
-              Object {
-                "key": "column1",
-                "title": "Column1",
-              },
-            ],
-            "data": Array [
-              Object {
-                "column1": 0,
-                "key": "0",
-              },
-              Object {
-                "column1": 1,
-                "key": "1",
-              },
-              Object {
-                "column1": 2,
-                "key": "2",
-              },
-              Object {
-                "column1": 3,
-                "key": "3",
-              },
-              Object {
-                "column1": 4,
-                "key": "4",
-              },
-              Object {
-                "column1": 5,
-                "key": "5",
-              },
-              Object {
-                "column1": 6,
-                "key": "6",
-              },
-              Object {
-                "column1": 7,
-                "key": "7",
-              },
-              Object {
-                "column1": 8,
-                "key": "8",
-              },
-              Object {
-                "column1": 9,
-                "key": "9",
-              },
-              Object {
-                "column1": 10,
-                "key": "10",
-              },
-              Object {
-                "column1": 11,
-                "key": "11",
-              },
-              Object {
-                "column1": 12,
-                "key": "12",
-              },
-              Object {
-                "column1": 13,
-                "key": "13",
-              },
-              Object {
-                "column1": 14,
-                "key": "14",
-              },
-              Object {
-                "column1": 15,
-                "key": "15",
-              },
-              Object {
-                "column1": 16,
-                "key": "16",
-              },
-              Object {
-                "column1": 17,
-                "key": "17",
-              },
-              Object {
-                "column1": 18,
-                "key": "18",
-              },
-              Object {
-                "column1": 19,
-                "key": "19",
-              },
-              Object {
-                "column1": 20,
-                "key": "20",
-              },
-              Object {
-                "column1": 21,
-                "key": "21",
-              },
-              Object {
-                "column1": 22,
-                "key": "22",
-              },
-              Object {
-                "column1": 23,
-                "key": "23",
-              },
-              Object {
-                "column1": 24,
-                "key": "24",
-              },
-            ],
-            "onSelectionChange": null,
-            "onSortChange": [Function],
-            "rowKey": "key",
-            "selection": Array [],
-            "sortColumn": null,
-            "sortDirection": "ASC",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "baseClassName": "pul-pagination",
-            "className": null,
-            "current": 1,
-            "isShowNavigationButtons": true,
-            "isShowPageButtons": null,
-            "maxPageButtons": 11,
-            "onSelect": [Function],
-            "total": 3,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-      "type": "div",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getDerivedStateFromProps": true,
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-    "attachTo": undefined,
-    "hydrateIn": undefined,
-  },
-}
-`;
-
-exports[`ServerList render sort correctly 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ServerList
-    action="/api/test"
-    api={
-      Object {
-        "get": [MockFunction] {
-          "calls": Array [
-            Array [
-              "/api/test",
-              Object {
-                "pageNumber": 1,
-                "pageSize": 25,
-                "sortColumn": "column1",
-                "sortDirection": "ASC",
-              },
-            ],
-          ],
-          "results": Array [
-            Object {
-              "isThrow": false,
-              "value": Promise {},
-            },
-          ],
-        },
-      }
-    }
-    columns={
-      Array [
-        Object {
-          "key": "column1",
-          "title": "Column1",
-        },
-      ]
-    }
-    config={
-      Object {
-        "baseUrl": "",
-      }
-    }
-    defaultPageSize={25}
-    defaultSortColumn="column1"
-    defaultSortDirection="ASC"
-    listProps={Object {}}
-    paginationProps={Object {}}
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "host",
-    "props": Object {
-      "children": Array [
-        <List
-          baseClassName="pul-list"
-          className={null}
-          columns={
-            Array [
-              Object {
-                "key": "column1",
-                "title": "Column1",
-              },
-            ]
-          }
-          data={
-            Array [
-              Object {
-                "column1": 0,
-                "key": "0",
-              },
-              Object {
-                "column1": 1,
-                "key": "1",
-              },
-              Object {
-                "column1": 2,
-                "key": "2",
-              },
-              Object {
-                "column1": 3,
-                "key": "3",
-              },
-              Object {
-                "column1": 4,
-                "key": "4",
-              },
-              Object {
-                "column1": 5,
-                "key": "5",
-              },
-              Object {
-                "column1": 6,
-                "key": "6",
-              },
-              Object {
-                "column1": 7,
-                "key": "7",
-              },
-              Object {
-                "column1": 8,
-                "key": "8",
-              },
-              Object {
-                "column1": 9,
-                "key": "9",
-              },
-              Object {
-                "column1": 10,
-                "key": "10",
-              },
-              Object {
-                "column1": 11,
-                "key": "11",
-              },
-              Object {
-                "column1": 12,
-                "key": "12",
-              },
-              Object {
-                "column1": 13,
-                "key": "13",
-              },
-              Object {
-                "column1": 14,
-                "key": "14",
-              },
-              Object {
-                "column1": 15,
-                "key": "15",
-              },
-              Object {
-                "column1": 16,
-                "key": "16",
-              },
-              Object {
-                "column1": 17,
-                "key": "17",
-              },
-              Object {
-                "column1": 18,
-                "key": "18",
-              },
-              Object {
-                "column1": 19,
-                "key": "19",
-              },
-              Object {
-                "column1": 20,
-                "key": "20",
-              },
-              Object {
-                "column1": 21,
-                "key": "21",
-              },
-              Object {
-                "column1": 22,
-                "key": "22",
-              },
-              Object {
-                "column1": 23,
-                "key": "23",
-              },
-              Object {
-                "column1": 24,
-                "key": "24",
-              },
-            ]
-          }
-          onSelectionChange={null}
-          onSortChange={[Function]}
-          rowKey="key"
-          selection={Array []}
-          sortColumn="column1"
-          sortDirection="ASC"
-        />,
-        <Pagination
-          baseClassName="pul-pagination"
-          className={null}
-          current={1}
-          isShowNavigationButtons={true}
-          isShowPageButtons={null}
-          maxPageButtons={11}
-          onSelect={[Function]}
-          total={3}
-        />,
-      ],
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "baseClassName": "pul-list",
-          "className": null,
-          "columns": Array [
-            Object {
-              "key": "column1",
-              "title": "Column1",
-            },
-          ],
-          "data": Array [
-            Object {
-              "column1": 0,
-              "key": "0",
-            },
-            Object {
-              "column1": 1,
-              "key": "1",
-            },
-            Object {
-              "column1": 2,
-              "key": "2",
-            },
-            Object {
-              "column1": 3,
-              "key": "3",
-            },
-            Object {
-              "column1": 4,
-              "key": "4",
-            },
-            Object {
-              "column1": 5,
-              "key": "5",
-            },
-            Object {
-              "column1": 6,
-              "key": "6",
-            },
-            Object {
-              "column1": 7,
-              "key": "7",
-            },
-            Object {
-              "column1": 8,
-              "key": "8",
-            },
-            Object {
-              "column1": 9,
-              "key": "9",
-            },
-            Object {
-              "column1": 10,
-              "key": "10",
-            },
-            Object {
-              "column1": 11,
-              "key": "11",
-            },
-            Object {
-              "column1": 12,
-              "key": "12",
-            },
-            Object {
-              "column1": 13,
-              "key": "13",
-            },
-            Object {
-              "column1": 14,
-              "key": "14",
-            },
-            Object {
-              "column1": 15,
-              "key": "15",
-            },
-            Object {
-              "column1": 16,
-              "key": "16",
-            },
-            Object {
-              "column1": 17,
-              "key": "17",
-            },
-            Object {
-              "column1": 18,
-              "key": "18",
-            },
-            Object {
-              "column1": 19,
-              "key": "19",
-            },
-            Object {
-              "column1": 20,
-              "key": "20",
-            },
-            Object {
-              "column1": 21,
-              "key": "21",
-            },
-            Object {
-              "column1": 22,
-              "key": "22",
-            },
-            Object {
-              "column1": 23,
-              "key": "23",
-            },
-            Object {
-              "column1": 24,
-              "key": "24",
-            },
-          ],
-          "onSelectionChange": null,
-          "onSortChange": [Function],
-          "rowKey": "key",
-          "selection": Array [],
-          "sortColumn": "column1",
-          "sortDirection": "ASC",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "baseClassName": "pul-pagination",
-          "className": null,
-          "current": 1,
-          "isShowNavigationButtons": true,
-          "isShowPageButtons": null,
-          "maxPageButtons": 11,
-          "onSelect": [Function],
-          "total": 3,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <List
-            baseClassName="pul-list"
-            className={null}
-            columns={
-              Array [
-                Object {
-                  "key": "column1",
-                  "title": "Column1",
-                },
-              ]
-            }
-            data={
-              Array [
-                Object {
-                  "column1": 0,
-                  "key": "0",
-                },
-                Object {
-                  "column1": 1,
-                  "key": "1",
-                },
-                Object {
-                  "column1": 2,
-                  "key": "2",
-                },
-                Object {
-                  "column1": 3,
-                  "key": "3",
-                },
-                Object {
-                  "column1": 4,
-                  "key": "4",
-                },
-                Object {
-                  "column1": 5,
-                  "key": "5",
-                },
-                Object {
-                  "column1": 6,
-                  "key": "6",
-                },
-                Object {
-                  "column1": 7,
-                  "key": "7",
-                },
-                Object {
-                  "column1": 8,
-                  "key": "8",
-                },
-                Object {
-                  "column1": 9,
-                  "key": "9",
-                },
-                Object {
-                  "column1": 10,
-                  "key": "10",
-                },
-                Object {
-                  "column1": 11,
-                  "key": "11",
-                },
-                Object {
-                  "column1": 12,
-                  "key": "12",
-                },
-                Object {
-                  "column1": 13,
-                  "key": "13",
-                },
-                Object {
-                  "column1": 14,
-                  "key": "14",
-                },
-                Object {
-                  "column1": 15,
-                  "key": "15",
-                },
-                Object {
-                  "column1": 16,
-                  "key": "16",
-                },
-                Object {
-                  "column1": 17,
-                  "key": "17",
-                },
-                Object {
-                  "column1": 18,
-                  "key": "18",
-                },
-                Object {
-                  "column1": 19,
-                  "key": "19",
-                },
-                Object {
-                  "column1": 20,
-                  "key": "20",
-                },
-                Object {
-                  "column1": 21,
-                  "key": "21",
-                },
-                Object {
-                  "column1": 22,
-                  "key": "22",
-                },
-                Object {
-                  "column1": 23,
-                  "key": "23",
-                },
-                Object {
-                  "column1": 24,
-                  "key": "24",
-                },
-              ]
-            }
-            onSelectionChange={null}
-            onSortChange={[Function]}
-            rowKey="key"
-            selection={Array []}
-            sortColumn="column1"
-            sortDirection="ASC"
-          />,
-          <Pagination
-            baseClassName="pul-pagination"
-            className={null}
-            current={1}
-            isShowNavigationButtons={true}
-            isShowPageButtons={null}
-            maxPageButtons={11}
-            onSelect={[Function]}
-            total={3}
-          />,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "baseClassName": "pul-list",
-            "className": null,
-            "columns": Array [
-              Object {
-                "key": "column1",
-                "title": "Column1",
-              },
-            ],
-            "data": Array [
-              Object {
-                "column1": 0,
-                "key": "0",
-              },
-              Object {
-                "column1": 1,
-                "key": "1",
-              },
-              Object {
-                "column1": 2,
-                "key": "2",
-              },
-              Object {
-                "column1": 3,
-                "key": "3",
-              },
-              Object {
-                "column1": 4,
-                "key": "4",
-              },
-              Object {
-                "column1": 5,
-                "key": "5",
-              },
-              Object {
-                "column1": 6,
-                "key": "6",
-              },
-              Object {
-                "column1": 7,
-                "key": "7",
-              },
-              Object {
-                "column1": 8,
-                "key": "8",
-              },
-              Object {
-                "column1": 9,
-                "key": "9",
-              },
-              Object {
-                "column1": 10,
-                "key": "10",
-              },
-              Object {
-                "column1": 11,
-                "key": "11",
-              },
-              Object {
-                "column1": 12,
-                "key": "12",
-              },
-              Object {
-                "column1": 13,
-                "key": "13",
-              },
-              Object {
-                "column1": 14,
-                "key": "14",
-              },
-              Object {
-                "column1": 15,
-                "key": "15",
-              },
-              Object {
-                "column1": 16,
-                "key": "16",
-              },
-              Object {
-                "column1": 17,
-                "key": "17",
-              },
-              Object {
-                "column1": 18,
-                "key": "18",
-              },
-              Object {
-                "column1": 19,
-                "key": "19",
-              },
-              Object {
-                "column1": 20,
-                "key": "20",
-              },
-              Object {
-                "column1": 21,
-                "key": "21",
-              },
-              Object {
-                "column1": 22,
-                "key": "22",
-              },
-              Object {
-                "column1": 23,
-                "key": "23",
-              },
-              Object {
-                "column1": 24,
-                "key": "24",
-              },
-            ],
-            "onSelectionChange": null,
-            "onSortChange": [Function],
-            "rowKey": "key",
-            "selection": Array [],
-            "sortColumn": "column1",
-            "sortDirection": "ASC",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "baseClassName": "pul-pagination",
-            "className": null,
-            "current": 1,
-            "isShowNavigationButtons": true,
-            "isShowPageButtons": null,
-            "maxPageButtons": 11,
-            "onSelect": [Function],
-            "total": 3,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-      "type": "div",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getDerivedStateFromProps": true,
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-    "attachTo": undefined,
-    "hydrateIn": undefined,
-  },
-}
-`;
-
 exports[`ServerList renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
@@ -1354,11 +44,17 @@ ShallowWrapper {
     defaultSortDirection="ASC"
     listProps={Object {}}
     paginationProps={Object {}}
+    statusMessages={
+      Object {
+        "add": [MockFunction],
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -1592,7 +288,882 @@ ShallowWrapper {
 }
 `;
 
-exports[`ServerList renders correctly with status error 1`] = `
+exports[`ServerList renders errors correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ServerList
+    action="/api/test"
+    api={
+      Object {
+        "get": [MockFunction] {
+          "calls": Array [
+            Array [
+              "/api/test",
+              Object {
+                "pageNumber": 1,
+                "pageSize": 25,
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": Promise {},
+            },
+          ],
+        },
+      }
+    }
+    columns={
+      Array [
+        Object {
+          "key": "column1",
+          "title": "Column1",
+        },
+      ]
+    }
+    config={
+      Object {
+        "baseUrl": "",
+      }
+    }
+    defaultPageSize={25}
+    defaultSortColumn={null}
+    defaultSortDirection="ASC"
+    listProps={Object {}}
+    paginationProps={Object {}}
+    statusMessages={
+      Object {
+        "add": [MockFunction] {
+          "calls": Array [
+            Array [
+              Object {
+                "intent": "danger",
+                "message": "Some error",
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": undefined,
+            },
+          ],
+        },
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <List
+          baseClassName="pul-list"
+          className={null}
+          columns={
+            Array [
+              Object {
+                "key": "column1",
+                "title": "Column1",
+              },
+            ]
+          }
+          data={Array []}
+          onSelectionChange={null}
+          onSortChange={[Function]}
+          rowKey="key"
+          selection={Array []}
+          sortColumn={null}
+          sortDirection="ASC"
+        />,
+        null,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "baseClassName": "pul-list",
+          "className": null,
+          "columns": Array [
+            Object {
+              "key": "column1",
+              "title": "Column1",
+            },
+          ],
+          "data": Array [],
+          "onSelectionChange": null,
+          "onSortChange": [Function],
+          "rowKey": "key",
+          "selection": Array [],
+          "sortColumn": null,
+          "sortDirection": "ASC",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      null,
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <List
+            baseClassName="pul-list"
+            className={null}
+            columns={
+              Array [
+                Object {
+                  "key": "column1",
+                  "title": "Column1",
+                },
+              ]
+            }
+            data={Array []}
+            onSelectionChange={null}
+            onSortChange={[Function]}
+            rowKey="key"
+            selection={Array []}
+            sortColumn={null}
+            sortDirection="ASC"
+          />,
+          null,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "baseClassName": "pul-list",
+            "className": null,
+            "columns": Array [
+              Object {
+                "key": "column1",
+                "title": "Column1",
+              },
+            ],
+            "data": Array [],
+            "onSelectionChange": null,
+            "onSortChange": [Function],
+            "rowKey": "key",
+            "selection": Array [],
+            "sortColumn": null,
+            "sortDirection": "ASC",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        null,
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
+
+exports[`ServerList renders pagination correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ServerList
+    action="/api/test"
+    api={
+      Object {
+        "get": [MockFunction] {
+          "calls": Array [
+            Array [
+              "/api/test",
+              Object {
+                "pageNumber": 1,
+                "pageSize": 25,
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": Promise {},
+            },
+          ],
+        },
+      }
+    }
+    columns={
+      Array [
+        Object {
+          "key": "column1",
+          "title": "Column1",
+        },
+      ]
+    }
+    config={
+      Object {
+        "baseUrl": "",
+      }
+    }
+    defaultPageSize={25}
+    defaultSortColumn={null}
+    defaultSortDirection="ASC"
+    listProps={Object {}}
+    paginationProps={Object {}}
+    statusMessages={
+      Object {
+        "add": [MockFunction],
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <List
+          baseClassName="pul-list"
+          className={null}
+          columns={
+            Array [
+              Object {
+                "key": "column1",
+                "title": "Column1",
+              },
+            ]
+          }
+          data={
+            Array [
+              Object {
+                "column1": 0,
+                "key": "0",
+              },
+              Object {
+                "column1": 1,
+                "key": "1",
+              },
+              Object {
+                "column1": 2,
+                "key": "2",
+              },
+              Object {
+                "column1": 3,
+                "key": "3",
+              },
+              Object {
+                "column1": 4,
+                "key": "4",
+              },
+              Object {
+                "column1": 5,
+                "key": "5",
+              },
+              Object {
+                "column1": 6,
+                "key": "6",
+              },
+              Object {
+                "column1": 7,
+                "key": "7",
+              },
+              Object {
+                "column1": 8,
+                "key": "8",
+              },
+              Object {
+                "column1": 9,
+                "key": "9",
+              },
+              Object {
+                "column1": 10,
+                "key": "10",
+              },
+              Object {
+                "column1": 11,
+                "key": "11",
+              },
+              Object {
+                "column1": 12,
+                "key": "12",
+              },
+              Object {
+                "column1": 13,
+                "key": "13",
+              },
+              Object {
+                "column1": 14,
+                "key": "14",
+              },
+              Object {
+                "column1": 15,
+                "key": "15",
+              },
+              Object {
+                "column1": 16,
+                "key": "16",
+              },
+              Object {
+                "column1": 17,
+                "key": "17",
+              },
+              Object {
+                "column1": 18,
+                "key": "18",
+              },
+              Object {
+                "column1": 19,
+                "key": "19",
+              },
+              Object {
+                "column1": 20,
+                "key": "20",
+              },
+              Object {
+                "column1": 21,
+                "key": "21",
+              },
+              Object {
+                "column1": 22,
+                "key": "22",
+              },
+              Object {
+                "column1": 23,
+                "key": "23",
+              },
+              Object {
+                "column1": 24,
+                "key": "24",
+              },
+            ]
+          }
+          onSelectionChange={null}
+          onSortChange={[Function]}
+          rowKey="key"
+          selection={Array []}
+          sortColumn={null}
+          sortDirection="ASC"
+        />,
+        <Pagination
+          baseClassName="pul-pagination"
+          className={null}
+          current={1}
+          isShowNavigationButtons={true}
+          isShowPageButtons={null}
+          maxPageButtons={11}
+          onSelect={[Function]}
+          total={3}
+        />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "baseClassName": "pul-list",
+          "className": null,
+          "columns": Array [
+            Object {
+              "key": "column1",
+              "title": "Column1",
+            },
+          ],
+          "data": Array [
+            Object {
+              "column1": 0,
+              "key": "0",
+            },
+            Object {
+              "column1": 1,
+              "key": "1",
+            },
+            Object {
+              "column1": 2,
+              "key": "2",
+            },
+            Object {
+              "column1": 3,
+              "key": "3",
+            },
+            Object {
+              "column1": 4,
+              "key": "4",
+            },
+            Object {
+              "column1": 5,
+              "key": "5",
+            },
+            Object {
+              "column1": 6,
+              "key": "6",
+            },
+            Object {
+              "column1": 7,
+              "key": "7",
+            },
+            Object {
+              "column1": 8,
+              "key": "8",
+            },
+            Object {
+              "column1": 9,
+              "key": "9",
+            },
+            Object {
+              "column1": 10,
+              "key": "10",
+            },
+            Object {
+              "column1": 11,
+              "key": "11",
+            },
+            Object {
+              "column1": 12,
+              "key": "12",
+            },
+            Object {
+              "column1": 13,
+              "key": "13",
+            },
+            Object {
+              "column1": 14,
+              "key": "14",
+            },
+            Object {
+              "column1": 15,
+              "key": "15",
+            },
+            Object {
+              "column1": 16,
+              "key": "16",
+            },
+            Object {
+              "column1": 17,
+              "key": "17",
+            },
+            Object {
+              "column1": 18,
+              "key": "18",
+            },
+            Object {
+              "column1": 19,
+              "key": "19",
+            },
+            Object {
+              "column1": 20,
+              "key": "20",
+            },
+            Object {
+              "column1": 21,
+              "key": "21",
+            },
+            Object {
+              "column1": 22,
+              "key": "22",
+            },
+            Object {
+              "column1": 23,
+              "key": "23",
+            },
+            Object {
+              "column1": 24,
+              "key": "24",
+            },
+          ],
+          "onSelectionChange": null,
+          "onSortChange": [Function],
+          "rowKey": "key",
+          "selection": Array [],
+          "sortColumn": null,
+          "sortDirection": "ASC",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "baseClassName": "pul-pagination",
+          "className": null,
+          "current": 1,
+          "isShowNavigationButtons": true,
+          "isShowPageButtons": null,
+          "maxPageButtons": 11,
+          "onSelect": [Function],
+          "total": 3,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <List
+            baseClassName="pul-list"
+            className={null}
+            columns={
+              Array [
+                Object {
+                  "key": "column1",
+                  "title": "Column1",
+                },
+              ]
+            }
+            data={
+              Array [
+                Object {
+                  "column1": 0,
+                  "key": "0",
+                },
+                Object {
+                  "column1": 1,
+                  "key": "1",
+                },
+                Object {
+                  "column1": 2,
+                  "key": "2",
+                },
+                Object {
+                  "column1": 3,
+                  "key": "3",
+                },
+                Object {
+                  "column1": 4,
+                  "key": "4",
+                },
+                Object {
+                  "column1": 5,
+                  "key": "5",
+                },
+                Object {
+                  "column1": 6,
+                  "key": "6",
+                },
+                Object {
+                  "column1": 7,
+                  "key": "7",
+                },
+                Object {
+                  "column1": 8,
+                  "key": "8",
+                },
+                Object {
+                  "column1": 9,
+                  "key": "9",
+                },
+                Object {
+                  "column1": 10,
+                  "key": "10",
+                },
+                Object {
+                  "column1": 11,
+                  "key": "11",
+                },
+                Object {
+                  "column1": 12,
+                  "key": "12",
+                },
+                Object {
+                  "column1": 13,
+                  "key": "13",
+                },
+                Object {
+                  "column1": 14,
+                  "key": "14",
+                },
+                Object {
+                  "column1": 15,
+                  "key": "15",
+                },
+                Object {
+                  "column1": 16,
+                  "key": "16",
+                },
+                Object {
+                  "column1": 17,
+                  "key": "17",
+                },
+                Object {
+                  "column1": 18,
+                  "key": "18",
+                },
+                Object {
+                  "column1": 19,
+                  "key": "19",
+                },
+                Object {
+                  "column1": 20,
+                  "key": "20",
+                },
+                Object {
+                  "column1": 21,
+                  "key": "21",
+                },
+                Object {
+                  "column1": 22,
+                  "key": "22",
+                },
+                Object {
+                  "column1": 23,
+                  "key": "23",
+                },
+                Object {
+                  "column1": 24,
+                  "key": "24",
+                },
+              ]
+            }
+            onSelectionChange={null}
+            onSortChange={[Function]}
+            rowKey="key"
+            selection={Array []}
+            sortColumn={null}
+            sortDirection="ASC"
+          />,
+          <Pagination
+            baseClassName="pul-pagination"
+            className={null}
+            current={1}
+            isShowNavigationButtons={true}
+            isShowPageButtons={null}
+            maxPageButtons={11}
+            onSelect={[Function]}
+            total={3}
+          />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "baseClassName": "pul-list",
+            "className": null,
+            "columns": Array [
+              Object {
+                "key": "column1",
+                "title": "Column1",
+              },
+            ],
+            "data": Array [
+              Object {
+                "column1": 0,
+                "key": "0",
+              },
+              Object {
+                "column1": 1,
+                "key": "1",
+              },
+              Object {
+                "column1": 2,
+                "key": "2",
+              },
+              Object {
+                "column1": 3,
+                "key": "3",
+              },
+              Object {
+                "column1": 4,
+                "key": "4",
+              },
+              Object {
+                "column1": 5,
+                "key": "5",
+              },
+              Object {
+                "column1": 6,
+                "key": "6",
+              },
+              Object {
+                "column1": 7,
+                "key": "7",
+              },
+              Object {
+                "column1": 8,
+                "key": "8",
+              },
+              Object {
+                "column1": 9,
+                "key": "9",
+              },
+              Object {
+                "column1": 10,
+                "key": "10",
+              },
+              Object {
+                "column1": 11,
+                "key": "11",
+              },
+              Object {
+                "column1": 12,
+                "key": "12",
+              },
+              Object {
+                "column1": 13,
+                "key": "13",
+              },
+              Object {
+                "column1": 14,
+                "key": "14",
+              },
+              Object {
+                "column1": 15,
+                "key": "15",
+              },
+              Object {
+                "column1": 16,
+                "key": "16",
+              },
+              Object {
+                "column1": 17,
+                "key": "17",
+              },
+              Object {
+                "column1": 18,
+                "key": "18",
+              },
+              Object {
+                "column1": 19,
+                "key": "19",
+              },
+              Object {
+                "column1": 20,
+                "key": "20",
+              },
+              Object {
+                "column1": 21,
+                "key": "21",
+              },
+              Object {
+                "column1": 22,
+                "key": "22",
+              },
+              Object {
+                "column1": 23,
+                "key": "23",
+              },
+              Object {
+                "column1": 24,
+                "key": "24",
+              },
+            ],
+            "onSelectionChange": null,
+            "onSortChange": [Function],
+            "rowKey": "key",
+            "selection": Array [],
+            "sortColumn": null,
+            "sortDirection": "ASC",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "baseClassName": "pul-pagination",
+            "className": null,
+            "current": 1,
+            "isShowNavigationButtons": true,
+            "isShowPageButtons": null,
+            "maxPageButtons": 11,
+            "onSelect": [Function],
+            "total": 3,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
+
+exports[`ServerList renders sort correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ServerList
@@ -1638,11 +1209,17 @@ ShallowWrapper {
     defaultSortDirection="ASC"
     listProps={Object {}}
     paginationProps={Object {}}
+    statusMessages={
+      Object {
+        "add": [MockFunction],
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -1663,7 +1240,110 @@ ShallowWrapper {
               },
             ]
           }
-          data={Array []}
+          data={
+            Array [
+              Object {
+                "column1": 0,
+                "key": "0",
+              },
+              Object {
+                "column1": 1,
+                "key": "1",
+              },
+              Object {
+                "column1": 2,
+                "key": "2",
+              },
+              Object {
+                "column1": 3,
+                "key": "3",
+              },
+              Object {
+                "column1": 4,
+                "key": "4",
+              },
+              Object {
+                "column1": 5,
+                "key": "5",
+              },
+              Object {
+                "column1": 6,
+                "key": "6",
+              },
+              Object {
+                "column1": 7,
+                "key": "7",
+              },
+              Object {
+                "column1": 8,
+                "key": "8",
+              },
+              Object {
+                "column1": 9,
+                "key": "9",
+              },
+              Object {
+                "column1": 10,
+                "key": "10",
+              },
+              Object {
+                "column1": 11,
+                "key": "11",
+              },
+              Object {
+                "column1": 12,
+                "key": "12",
+              },
+              Object {
+                "column1": 13,
+                "key": "13",
+              },
+              Object {
+                "column1": 14,
+                "key": "14",
+              },
+              Object {
+                "column1": 15,
+                "key": "15",
+              },
+              Object {
+                "column1": 16,
+                "key": "16",
+              },
+              Object {
+                "column1": 17,
+                "key": "17",
+              },
+              Object {
+                "column1": 18,
+                "key": "18",
+              },
+              Object {
+                "column1": 19,
+                "key": "19",
+              },
+              Object {
+                "column1": 20,
+                "key": "20",
+              },
+              Object {
+                "column1": 21,
+                "key": "21",
+              },
+              Object {
+                "column1": 22,
+                "key": "22",
+              },
+              Object {
+                "column1": 23,
+                "key": "23",
+              },
+              Object {
+                "column1": 24,
+                "key": "24",
+              },
+            ]
+          }
           onSelectionChange={null}
           onSortChange={[Function]}
           rowKey="key"
@@ -1671,7 +1351,16 @@ ShallowWrapper {
           sortColumn="column1"
           sortDirection="ASC"
         />,
-        null,
+        <Pagination
+          baseClassName="pul-pagination"
+          className={null}
+          current={1}
+          isShowNavigationButtons={true}
+          isShowPageButtons={null}
+          maxPageButtons={11}
+          onSelect={[Function]}
+          total={3}
+        />,
       ],
     },
     "ref": null,
@@ -1689,7 +1378,108 @@ ShallowWrapper {
               "title": "Column1",
             },
           ],
-          "data": Array [],
+          "data": Array [
+            Object {
+              "column1": 0,
+              "key": "0",
+            },
+            Object {
+              "column1": 1,
+              "key": "1",
+            },
+            Object {
+              "column1": 2,
+              "key": "2",
+            },
+            Object {
+              "column1": 3,
+              "key": "3",
+            },
+            Object {
+              "column1": 4,
+              "key": "4",
+            },
+            Object {
+              "column1": 5,
+              "key": "5",
+            },
+            Object {
+              "column1": 6,
+              "key": "6",
+            },
+            Object {
+              "column1": 7,
+              "key": "7",
+            },
+            Object {
+              "column1": 8,
+              "key": "8",
+            },
+            Object {
+              "column1": 9,
+              "key": "9",
+            },
+            Object {
+              "column1": 10,
+              "key": "10",
+            },
+            Object {
+              "column1": 11,
+              "key": "11",
+            },
+            Object {
+              "column1": 12,
+              "key": "12",
+            },
+            Object {
+              "column1": 13,
+              "key": "13",
+            },
+            Object {
+              "column1": 14,
+              "key": "14",
+            },
+            Object {
+              "column1": 15,
+              "key": "15",
+            },
+            Object {
+              "column1": 16,
+              "key": "16",
+            },
+            Object {
+              "column1": 17,
+              "key": "17",
+            },
+            Object {
+              "column1": 18,
+              "key": "18",
+            },
+            Object {
+              "column1": 19,
+              "key": "19",
+            },
+            Object {
+              "column1": 20,
+              "key": "20",
+            },
+            Object {
+              "column1": 21,
+              "key": "21",
+            },
+            Object {
+              "column1": 22,
+              "key": "22",
+            },
+            Object {
+              "column1": 23,
+              "key": "23",
+            },
+            Object {
+              "column1": 24,
+              "key": "24",
+            },
+          ],
           "onSelectionChange": null,
           "onSortChange": [Function],
           "rowKey": "key",
@@ -1701,7 +1491,24 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
-      null,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "baseClassName": "pul-pagination",
+          "className": null,
+          "current": 1,
+          "isShowNavigationButtons": true,
+          "isShowPageButtons": null,
+          "maxPageButtons": 11,
+          "onSelect": [Function],
+          "total": 3,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
     ],
     "type": "div",
   },
@@ -1723,7 +1530,110 @@ ShallowWrapper {
                 },
               ]
             }
-            data={Array []}
+            data={
+              Array [
+                Object {
+                  "column1": 0,
+                  "key": "0",
+                },
+                Object {
+                  "column1": 1,
+                  "key": "1",
+                },
+                Object {
+                  "column1": 2,
+                  "key": "2",
+                },
+                Object {
+                  "column1": 3,
+                  "key": "3",
+                },
+                Object {
+                  "column1": 4,
+                  "key": "4",
+                },
+                Object {
+                  "column1": 5,
+                  "key": "5",
+                },
+                Object {
+                  "column1": 6,
+                  "key": "6",
+                },
+                Object {
+                  "column1": 7,
+                  "key": "7",
+                },
+                Object {
+                  "column1": 8,
+                  "key": "8",
+                },
+                Object {
+                  "column1": 9,
+                  "key": "9",
+                },
+                Object {
+                  "column1": 10,
+                  "key": "10",
+                },
+                Object {
+                  "column1": 11,
+                  "key": "11",
+                },
+                Object {
+                  "column1": 12,
+                  "key": "12",
+                },
+                Object {
+                  "column1": 13,
+                  "key": "13",
+                },
+                Object {
+                  "column1": 14,
+                  "key": "14",
+                },
+                Object {
+                  "column1": 15,
+                  "key": "15",
+                },
+                Object {
+                  "column1": 16,
+                  "key": "16",
+                },
+                Object {
+                  "column1": 17,
+                  "key": "17",
+                },
+                Object {
+                  "column1": 18,
+                  "key": "18",
+                },
+                Object {
+                  "column1": 19,
+                  "key": "19",
+                },
+                Object {
+                  "column1": 20,
+                  "key": "20",
+                },
+                Object {
+                  "column1": 21,
+                  "key": "21",
+                },
+                Object {
+                  "column1": 22,
+                  "key": "22",
+                },
+                Object {
+                  "column1": 23,
+                  "key": "23",
+                },
+                Object {
+                  "column1": 24,
+                  "key": "24",
+                },
+              ]
+            }
             onSelectionChange={null}
             onSortChange={[Function]}
             rowKey="key"
@@ -1731,7 +1641,16 @@ ShallowWrapper {
             sortColumn="column1"
             sortDirection="ASC"
           />,
-          null,
+          <Pagination
+            baseClassName="pul-pagination"
+            className={null}
+            current={1}
+            isShowNavigationButtons={true}
+            isShowPageButtons={null}
+            maxPageButtons={11}
+            onSelect={[Function]}
+            total={3}
+          />,
         ],
       },
       "ref": null,
@@ -1749,7 +1668,108 @@ ShallowWrapper {
                 "title": "Column1",
               },
             ],
-            "data": Array [],
+            "data": Array [
+              Object {
+                "column1": 0,
+                "key": "0",
+              },
+              Object {
+                "column1": 1,
+                "key": "1",
+              },
+              Object {
+                "column1": 2,
+                "key": "2",
+              },
+              Object {
+                "column1": 3,
+                "key": "3",
+              },
+              Object {
+                "column1": 4,
+                "key": "4",
+              },
+              Object {
+                "column1": 5,
+                "key": "5",
+              },
+              Object {
+                "column1": 6,
+                "key": "6",
+              },
+              Object {
+                "column1": 7,
+                "key": "7",
+              },
+              Object {
+                "column1": 8,
+                "key": "8",
+              },
+              Object {
+                "column1": 9,
+                "key": "9",
+              },
+              Object {
+                "column1": 10,
+                "key": "10",
+              },
+              Object {
+                "column1": 11,
+                "key": "11",
+              },
+              Object {
+                "column1": 12,
+                "key": "12",
+              },
+              Object {
+                "column1": 13,
+                "key": "13",
+              },
+              Object {
+                "column1": 14,
+                "key": "14",
+              },
+              Object {
+                "column1": 15,
+                "key": "15",
+              },
+              Object {
+                "column1": 16,
+                "key": "16",
+              },
+              Object {
+                "column1": 17,
+                "key": "17",
+              },
+              Object {
+                "column1": 18,
+                "key": "18",
+              },
+              Object {
+                "column1": 19,
+                "key": "19",
+              },
+              Object {
+                "column1": 20,
+                "key": "20",
+              },
+              Object {
+                "column1": 21,
+                "key": "21",
+              },
+              Object {
+                "column1": 22,
+                "key": "22",
+              },
+              Object {
+                "column1": 23,
+                "key": "23",
+              },
+              Object {
+                "column1": 24,
+                "key": "24",
+              },
+            ],
             "onSelectionChange": null,
             "onSortChange": [Function],
             "rowKey": "key",
@@ -1761,7 +1781,24 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
-        null,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "baseClassName": "pul-pagination",
+            "className": null,
+            "current": 1,
+            "isShowNavigationButtons": true,
+            "isShowPageButtons": null,
+            "maxPageButtons": 11,
+            "onSelect": [Function],
+            "total": 3,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
       ],
       "type": "div",
     },

@@ -1,0 +1,32 @@
+// Copyright 1999-2018. Plesk International GmbH. All rights reserved.
+
+import { createElement } from '@plesk/ui-library';
+import { StatusMessages } from '../StatusMessages';
+import { shallow } from 'enzyme';
+
+describe('StatusMessages', () => {
+    it('renders correctly', () => {
+        const wrapper = shallow(
+            <StatusMessages location={{ pathname: '/' }}>
+                <div />
+            </StatusMessages>
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('clear messages', () => {
+        const statusMessages = {
+            clear: jest.fn(),
+            setToaster: jest.fn(),
+        };
+        const wrapper = shallow(
+            <StatusMessages location={{ pathname: '/' }} statusMessages={statusMessages}>
+                <div />
+            </StatusMessages>
+        );
+        wrapper.setProps({ location: { pathname: '/next' } });
+
+        expect(statusMessages.clear).toHaveBeenCalled();
+    });
+});
