@@ -4,6 +4,8 @@ import { createElement, Form } from '@plesk/ui-library';
 import { ServerForm } from '../ServerForm';
 import { shallow } from 'enzyme';
 
+jest.useFakeTimers();
+
 describe('ServerForm', () => {
     let props;
 
@@ -79,6 +81,7 @@ describe('ServerForm', () => {
         expect.assertions(1);
 
         return promise.then(() => {
+            jest.runAllTimers();
             expect(props.statusMessages.add).toHaveBeenCalledWith({ intent: 'success', message: 'Form saved' });
         });
     });
