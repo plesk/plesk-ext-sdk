@@ -18,12 +18,14 @@ export default function ListExample() {
                 key: 'column1',
                 title: 'Link',
                 sortable: true,
+                // eslint-disable-next-line
                 render: ({ column1 }) => (
                     <a href="#">{`link #${column1}`}</a>
                 ),
             }, {
                 key: 'column2',
                 title: 'Description',
+                // eslint-disable-next-line
                 render: ({ column1, column2 }) => (
                     <span>
                         <img src={column2} />
@@ -33,7 +35,7 @@ export default function ListExample() {
             }]}
         />
     );
-};
+}
 ```
 
 Add a new action `listAction` in the controller:
