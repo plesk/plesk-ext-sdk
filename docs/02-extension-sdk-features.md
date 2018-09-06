@@ -184,7 +184,7 @@ $messages = [
 ];
 ```
 
-Pay attention on the key `title`. If component `Overview` used as a component for a route then this key will be used as the page title.
+Pay attention to the key `title`. If the component `Overview` is used as a component for a route, this is the key that will be used as the page title.
 
 ## Routing
 
@@ -371,7 +371,7 @@ All items in routes must have two required properties:
 
 Optional properties:
 * `title` - a title of the page. If you need to localize the page titles, see [Translations Guide](#translations).
-* `exact` - when true, will only match if the path matches the location.pathname exactly.
+* `exact` - when true, will only match if the path matches the `location.pathname` exactly.
 
 After building and uploading changes to the server, you can view the results by opening a URL like this: `https://my-plesk-server.com:8443/modules/example/index.php/overview`.
 
