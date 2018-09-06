@@ -1,5 +1,6 @@
 # Plesk Extension SDK
 
+[![npm version](https://badge.fury.io/js/%40plesk%2Fplesk-ext-sdk.svg)](https://badge.fury.io/js/%40plesk%2Fplesk-ext-sdk)
 [![Build Status](https://travis-ci.com/plesk/plesk-ext-sdk.svg?branch=master)](https://travis-ci.com/plesk/plesk-ext-sdk)
 
 It's a toolkit for development extensions for Plesk.
