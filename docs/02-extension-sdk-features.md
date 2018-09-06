@@ -2,55 +2,39 @@
 
 ## Show A List With Data From The Server
 
-Let's add a screen with the [List](https://plesk.github.io/ui-library/#!/List) component.
+Let's add a screen with the `ServerList` component.
 
 Update file `frontend/index.js`:
 
 `src/frontend/index.js`
 ```js
-import { createElement, Component, List, PropTypes } from '@plesk/plesk-ext-sdk';
-import axios from 'axios';
+import { createElement, ServerList } from '@plesk/plesk-ext-sdk';
 
-export default class extends Component {
-    static propTypes = {
-        baseUrl: PropTypes.string.isRequired,
-    };
-
-    state = {
-        data: [],
-    };
-
-    componentDidMount() {
-        const { baseUrl } = this.props;
-        axios.get(`${baseUrl}/api/list`).then(({ data }) => this.setState({ data }));
-    }
-
-    render() {
-        const { data } = this.state;
-
-        return (
-            <List
-                columns={[{
-                    key: 'column1',
-                    title: 'Link',
-                    sortable: true,
-                    render: ({ column1 }) => (
-                        <a href="#">{`link #${column1}`}</a>
-                    ),
-                }, {
-                    key: 'column2',
-                    title: 'Description',
-                    render: ({ column1, column2 }) => (
-                        <span>
-                            <img src={column2} />
-                            {` image #${column1}`}
-                        </span>
-                    ),
-                }]}
-                data={data}
-            />
-        );
-    }
+export default function ListExample() {
+    return (
+        <ServerList
+            action="/api/list"
+            columns={[{
+                key: 'column1',
+                title: 'Link',
+                sortable: true,
+                // eslint-disable-next-line
+                render: ({ column1 }) => (
+                    <a href="#">{`link #${column1}`}</a>
+                ),
+            }, {
+                key: 'column2',
+                title: 'Description',
+                // eslint-disable-next-line
+                render: ({ column1, column2 }) => (
+                    <span>
+                        <img src={column2} />
+                        {` image #${column1}`}
+                    </span>
+                ),
+            }]}
+        />
+    );
 }
 ```
 
@@ -74,9 +58,27 @@ class ApiController extends pm_Controller_Action
             ];
         }
 
-        $this->_helper->json($data);
-    }
+        $this->_helper->serverList($data);
 }
+```
+
+If you need to customize sort or pagination logic you can pass a function into `serverList` helper:
+
+```php
+<?php
+$this->_helper->serverList(function ($params) {
+    $pageSize = $params['pageSize'];
+    $pageNumber = $params['pageNumber'];
+    $sortColumn = $params['sortColumn'];
+    $sortDirection = $params['sortDirection'];
+
+    // fetching data from somewhere
+
+    return [
+        'data' => $data,
+        'totalItems' => $totalItems,
+    ];
+});
 ```
 
 ## Submit The Form To The Server
@@ -181,6 +183,8 @@ $messages = [
     ],
 ];
 ```
+
+Pay attention to the key `title`. If the component `Overview` is used as a component for a route, this is the key that will be used as the page title.
 
 ## Routing
 
@@ -360,15 +364,16 @@ module.exports = {
 };
 ```
 
-All items in routes should have three properties:
+All items in routes must have two required properties:
 
 * `path` - a valid URL (relative to the extension's base URL)
 * `component` - a path to the file with the component without extension and relative to the `src/frontend` directory
-* `title` - a title of the page
+
+Optional properties:
+* `title` - a title of the page. If you need to localize the page titles, see [Translations Guide](#translations).
+* `exact` - when true, will only match if the path matches the `location.pathname` exactly.
 
 After building and uploading changes to the server, you can view the results by opening a URL like this: `https://my-plesk-server.com:8443/modules/example/index.php/overview`.
-
-If you need to localize the page titles, you can update your locales. See [Translations Guide](#translations).
 
 ## State Management
 
