@@ -97,12 +97,14 @@ export class ServerForm extends Component {
                         return;
                     }
 
-                    if (successMessage) {
-                        statusMessages.add({ intent: 'success', message: successMessage });
-                    }
-
                     if (successUrl) {
                         history.push(successUrl);
+                    }
+
+                    if (successMessage) {
+                        setTimeout(() => {
+                            statusMessages.add({ intent: 'success', message: successMessage });
+                        });
                     }
                 }
             });
