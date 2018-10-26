@@ -346,19 +346,21 @@ Now we can add `extension.config.js` to the `root` directory of the extension an
 module.exports = {
     routes: [
         {
-            path: '/overview',
+            path: 'overview',
             component: 'Overview',
             title: 'Overview',
-        },
-        {
-            path: '/list',
-            component: 'ListExample',
-            title: 'List Example',
-        },
-        {
-            path: '/form',
-            component: 'FormExample',
-            title: 'Form Example',
+            routes: [
+                {
+                    path: 'list',
+                    component: 'ListExample',
+                    title: 'List Example',
+                },
+                {
+                    path: 'form',
+                    component: 'FormExample',
+                    title: 'Form Example',
+                },
+            ]
         },
     ],
 };
@@ -372,6 +374,7 @@ All items in routes must have two required properties:
 Optional properties:
 * `title` - a title of the page. If you need to localize the page titles, see [Translations Guide](#translations).
 * `exact` - when true, will only match if the path matches the `location.pathname` exactly.
+* `routes` - a set of nested routes.
 
 After building and uploading changes to the server, you can view the results by opening a URL like this: `https://my-plesk-server.com:8443/modules/example/index.php/overview`.
 
