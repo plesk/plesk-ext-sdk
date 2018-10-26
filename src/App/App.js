@@ -1,10 +1,10 @@
 // Copyright 1999-2018. Plesk International GmbH. All rights reserved.
 
 import { createElement, LocaleProvider, PropTypes } from '@plesk/ui-library';
-import { BrowserRouter, Switch } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { ConfigContext } from '../Config';
 import StatusMessages from '../StatusMessages';
-import Route from '../Route';
+import Page from '../Page';
 
 const App = ({ locale, routes, ...props }) => (
     <ConfigContext.Provider
@@ -20,8 +20,7 @@ const App = ({ locale, routes, ...props }) => (
                             <Route
                                 key={path}
                                 path={path}
-                                render={() => <Tag {...props} />}
-                                routes={routes}
+                                render={() => <Page path={path} routes={routes}><Tag {...props} /></Page>}
                                 {...routeProps}
                             />
                         ))}
