@@ -2,7 +2,6 @@
 
 import { createElement } from '@plesk/ui-library';
 import withStatusMessages from '../withStatusMessages';
-import StatusMessagesContext from '../StatusMessagesContext';
 import { mount } from 'enzyme';
 
 describe('withStatusMessages', () => {
@@ -15,9 +14,12 @@ describe('withStatusMessages', () => {
 
         const statusMessages = {};
         const wrapper = mount(
-            <StatusMessagesContext.Provider value={statusMessages}>
-                <EnhancedComponent />
-            </StatusMessagesContext.Provider>
+            <EnhancedComponent />,
+            {
+                context: {
+                    statusMessages,
+                },
+            }
         );
 
         expect(wrapper.find(Component).prop('statusMessages')).toBe(statusMessages);

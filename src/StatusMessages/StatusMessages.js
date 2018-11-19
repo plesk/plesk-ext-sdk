@@ -2,7 +2,7 @@
 
 import { createElement, PureComponent, Toaster, PropTypes } from '@plesk/ui-library';
 import StatusMessagesProxy from './StatusMessagesProxy';
-import StatusMessagesContext from './StatusMessagesContext';
+import StatusMessagesProvider from './StatusMessagesProvider';
 import { withRouter } from 'react-router-dom';
 
 export class StatusMessages extends PureComponent {
@@ -29,10 +29,10 @@ export class StatusMessages extends PureComponent {
 
     render() {
         return (
-            <StatusMessagesContext.Provider value={this.props.statusMessages}>
+            <StatusMessagesProvider value={this.props.statusMessages}>
                 {this.props.children}
                 <Toaster ref={this.props.statusMessages.setToaster} />
-            </StatusMessagesContext.Provider>
+            </StatusMessagesProvider>
         );
     }
 }
