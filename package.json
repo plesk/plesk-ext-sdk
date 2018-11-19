@@ -1,7 +1,7 @@
 {
   "name": "@plesk/plesk-ext-sdk",
   "description": "Plesk Extension SDK",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "author": "Plesk Developers <plesk-dev-leads@plesk.com> (https://www.plesk.com/)",
   "repository": "plesk/plesk-ext-sdk",
   "bugs": {

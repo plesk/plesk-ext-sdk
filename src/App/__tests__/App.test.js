@@ -2,6 +2,9 @@
 
 import { createElement } from '@plesk/ui-library';
 import App from '../App';
+import { ConfigProvider } from '../../Config';
+import { ApiProvider } from '../../Api';
+import StatusMessages from '../../StatusMessages';
 import { shallow } from 'enzyme';
 
 describe('App', () => {
@@ -17,6 +20,9 @@ describe('App', () => {
                 }]}
             />
         );
+        expect(wrapper.find(ConfigProvider).length).toBe(1);
+        expect(wrapper.find(ApiProvider).length).toBe(1);
+        expect(wrapper.find(StatusMessages).length).toBe(1);
         expect(wrapper).toMatchSnapshot();
     });
 });

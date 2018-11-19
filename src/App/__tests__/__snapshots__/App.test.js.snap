@@ -32,124 +32,13 @@ ShallowWrapper {
       "children": <LocaleProvider
         messages={Object {}}
       >
-        <BrowserRouter
-          basename=""
-        >
-          <withRouter(StatusMessages)>
-            <Switch>
-              <Route
-                componentPath="Index"
-                path="/"
-                render={[Function]}
-              />
-            </Switch>
-          </withRouter(StatusMessages)>
-        </BrowserRouter>
-      </LocaleProvider>,
-      "value": Object {
-        "baseUrl": "",
-      },
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": <BrowserRouter
-          basename=""
-        >
-          <withRouter(StatusMessages)>
-            <Switch>
-              <Route
-                componentPath="Index"
-                path="/"
-                render={[Function]}
-              />
-            </Switch>
-          </withRouter(StatusMessages)>
-        </BrowserRouter>,
-        "messages": Object {},
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "basename": "",
-          "children": <withRouter(StatusMessages)>
-            <Switch>
-              <Route
-                componentPath="Index"
-                path="/"
-                render={[Function]}
-              />
-            </Switch>
-          </withRouter(StatusMessages)>,
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "children": <Switch>
-              <Route
-                componentPath="Index"
-                path="/"
-                render={[Function]}
-              />
-            </Switch>,
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": Array [
-                <Route
-                  componentPath="Index"
-                  path="/"
-                  render={[Function]}
-                />,
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": "/",
-                "nodeType": "class",
-                "props": Object {
-                  "componentPath": "Index",
-                  "path": "/",
-                  "render": [Function],
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-            ],
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-        "type": [Function],
-      },
-      "type": [Function],
-    },
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": <LocaleProvider
-          messages={Object {}}
+        <ConfigProvider
+          value={
+            Object {
+              "get": [Function],
+              "post": [Function],
+            }
+          }
         >
           <BrowserRouter
             basename=""
@@ -164,10 +53,41 @@ ShallowWrapper {
               </Switch>
             </withRouter(StatusMessages)>
           </BrowserRouter>
-        </LocaleProvider>,
-        "value": Object {
-          "baseUrl": "",
-        },
+        </ConfigProvider>
+      </LocaleProvider>,
+      "value": Object {
+        "baseUrl": "",
+      },
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <ConfigProvider
+          value={
+            Object {
+              "get": [Function],
+              "post": [Function],
+            }
+          }
+        >
+          <BrowserRouter
+            basename=""
+          >
+            <withRouter(StatusMessages)>
+              <Switch>
+                <Route
+                  componentPath="Index"
+                  path="/"
+                  render={[Function]}
+                />
+              </Switch>
+            </withRouter(StatusMessages)>
+          </BrowserRouter>
+        </ConfigProvider>,
+        "messages": Object {},
       },
       "ref": null,
       "rendered": Object {
@@ -188,7 +108,10 @@ ShallowWrapper {
               </Switch>
             </withRouter(StatusMessages)>
           </BrowserRouter>,
-          "messages": Object {},
+          "value": Object {
+            "get": [Function],
+            "post": [Function],
+          },
         },
         "ref": null,
         "rendered": Object {
@@ -251,6 +174,171 @@ ShallowWrapper {
                   "type": [Function],
                 },
               ],
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <LocaleProvider
+          messages={Object {}}
+        >
+          <ConfigProvider
+            value={
+              Object {
+                "get": [Function],
+                "post": [Function],
+              }
+            }
+          >
+            <BrowserRouter
+              basename=""
+            >
+              <withRouter(StatusMessages)>
+                <Switch>
+                  <Route
+                    componentPath="Index"
+                    path="/"
+                    render={[Function]}
+                  />
+                </Switch>
+              </withRouter(StatusMessages)>
+            </BrowserRouter>
+          </ConfigProvider>
+        </LocaleProvider>,
+        "value": Object {
+          "baseUrl": "",
+        },
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <ConfigProvider
+            value={
+              Object {
+                "get": [Function],
+                "post": [Function],
+              }
+            }
+          >
+            <BrowserRouter
+              basename=""
+            >
+              <withRouter(StatusMessages)>
+                <Switch>
+                  <Route
+                    componentPath="Index"
+                    path="/"
+                    render={[Function]}
+                  />
+                </Switch>
+              </withRouter(StatusMessages)>
+            </BrowserRouter>
+          </ConfigProvider>,
+          "messages": Object {},
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <BrowserRouter
+              basename=""
+            >
+              <withRouter(StatusMessages)>
+                <Switch>
+                  <Route
+                    componentPath="Index"
+                    path="/"
+                    render={[Function]}
+                  />
+                </Switch>
+              </withRouter(StatusMessages)>
+            </BrowserRouter>,
+            "value": Object {
+              "get": [Function],
+              "post": [Function],
+            },
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "basename": "",
+              "children": <withRouter(StatusMessages)>
+                <Switch>
+                  <Route
+                    componentPath="Index"
+                    path="/"
+                    render={[Function]}
+                  />
+                </Switch>
+              </withRouter(StatusMessages)>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": <Switch>
+                  <Route
+                    componentPath="Index"
+                    path="/"
+                    render={[Function]}
+                  />
+                </Switch>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <Route
+                      componentPath="Index"
+                      path="/"
+                      render={[Function]}
+                    />,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": "/",
+                    "nodeType": "class",
+                    "props": Object {
+                      "componentPath": "Index",
+                      "path": "/",
+                      "render": [Function],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
               "type": [Function],
             },
             "type": [Function],
