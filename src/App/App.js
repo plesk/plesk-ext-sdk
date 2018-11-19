@@ -2,12 +2,12 @@
 
 import { createElement, LocaleProvider, PropTypes } from '@plesk/ui-library';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { ConfigContext } from '../Config';
+import { ConfigProvider } from '../Config';
 import StatusMessages from '../StatusMessages';
 import Page from '../Page';
 
 const App = ({ locale, routes, ...props }) => (
-    <ConfigContext.Provider
+    <ConfigProvider
         value={{
             baseUrl: props.baseUrl,
         }}
@@ -28,7 +28,7 @@ const App = ({ locale, routes, ...props }) => (
                 </StatusMessages>
             </BrowserRouter>
         </LocaleProvider>
-    </ConfigContext.Provider>
+    </ConfigProvider>
 );
 
 App.propTypes = {

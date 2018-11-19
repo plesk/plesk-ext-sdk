@@ -29,7 +29,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "class",
     "props": Object {
       "children": Array [
         <div />,
@@ -71,37 +71,13 @@ ShallowWrapper {
         "type": [Function],
       },
     ],
-    "type": Object {
-      "$$typeof": Symbol(react.provider),
-      "_context": Object {
-        "$$typeof": Symbol(react.context),
-        "Consumer": [Circular],
-        "Provider": [Circular],
-        "_calculateChangedBits": null,
-        "_changedBits": 0,
-        "_changedBits2": 0,
-        "_currentRenderer": null,
-        "_currentRenderer2": null,
-        "_currentValue": StatusMessagesProxy {
-          "setToaster": [Function],
-          "toaster": null,
-        },
-        "_currentValue2": StatusMessagesProxy {
-          "setToaster": [Function],
-          "toaster": null,
-        },
-        "_defaultValue": StatusMessagesProxy {
-          "setToaster": [Function],
-          "toaster": null,
-        },
-      },
-    },
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "class",
       "props": Object {
         "children": Array [
           <div />,
@@ -143,31 +119,7 @@ ShallowWrapper {
           "type": [Function],
         },
       ],
-      "type": Object {
-        "$$typeof": Symbol(react.provider),
-        "_context": Object {
-          "$$typeof": Symbol(react.context),
-          "Consumer": [Circular],
-          "Provider": [Circular],
-          "_calculateChangedBits": null,
-          "_changedBits": 0,
-          "_changedBits2": 0,
-          "_currentRenderer": null,
-          "_currentRenderer2": null,
-          "_currentValue": StatusMessagesProxy {
-            "setToaster": [Function],
-            "toaster": null,
-          },
-          "_currentValue2": StatusMessagesProxy {
-            "setToaster": [Function],
-            "toaster": null,
-          },
-          "_defaultValue": StatusMessagesProxy {
-            "setToaster": [Function],
-            "toaster": null,
-          },
-        },
-      },
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
