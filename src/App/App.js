@@ -3,6 +3,7 @@
 import { createElement, LocaleProvider, PropTypes } from '@plesk/ui-library';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { ConfigProvider } from '../Config';
+import { ApiProvider } from '../Api';
 import StatusMessages from '../StatusMessages';
 import Page from '../Page';
 
@@ -13,20 +14,22 @@ const App = ({ locale, routes, ...props }) => (
         }}
     >
         <LocaleProvider messages={locale}>
-            <BrowserRouter basename={props.baseUrl}>
-                <StatusMessages>
-                    <Switch>
-                        {routes.map(({ path, component: Tag, ...routeProps }) => (
-                            <Route
-                                key={path}
-                                path={path}
-                                render={() => <Page path={path} routes={routes}><Tag {...props} /></Page>}
-                                {...routeProps}
-                            />
-                        ))}
-                    </Switch>
-                </StatusMessages>
-            </BrowserRouter>
+            <ApiProvider>
+                <BrowserRouter basename={props.baseUrl}>
+                    <StatusMessages>
+                        <Switch>
+                            {routes.map(({ path, component: Tag, ...routeProps }) => (
+                                <Route
+                                    key={path}
+                                    path={path}
+                                    render={() => <Page path={path} routes={routes}><Tag {...props} /></Page>}
+                                    {...routeProps}
+                                />
+                            ))}
+                        </Switch>
+                    </StatusMessages>
+                </BrowserRouter>
+            </ApiProvider>
         </LocaleProvider>
     </ConfigProvider>
 );
