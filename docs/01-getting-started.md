@@ -99,7 +99,7 @@ Create `package.json` file in the root of your project or use yarn init command:
 
 Since UI Library is based on React and browsers don't support jsx and ES6 syntax natively, first we need to transpile our code to native JS. We will use [Babel](http://babeljs.io/) for it. We will also use ES6 imports for importing functions and components from UI Library. We'll have to use [Webpack](https://webpack.js.org/) for handling ES6 imports because browsers don't support them natively. All these tools and some configs for integrating them are available in the package `@plesk/plesk-ext-sdk`. We will also need an HTTP client for retrieving data from the server, so let's install, for example, [axios](https://github.com/axios/axios) as a dependency.
 ```bash
-yarn add @plesk/plesk-ext-sdk@0.5.4 axios
+yarn add @plesk/plesk-ext-sdk@0.5.5 axios
 ```
 Once Yarn has added these packages to `package.json`, install it and generate `yarn.lock`. The lock file should be added to Git – you can read more about this in the Yarn [documentation](https://yarnpkg.com/lang/en/docs/yarn-lock/).
 
