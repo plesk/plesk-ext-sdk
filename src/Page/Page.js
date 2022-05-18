@@ -61,7 +61,13 @@ class Page extends Component {
     }
 
     renderPathbar() {
-        const pathbarContentArea = document.getElementById('pathbar-content-area');
+        // For Plesk 17.8
+        let pathbarContentArea = document.getElementById('pathbar-content-area');
+        if (!pathbarContentArea) {
+            // For Plesk 18+
+            pathbarContentArea = document.getElementsByClassName('pul-breadcrumbs__list')[0];
+        }
+
         if (!pathbarContentArea) {
             return null;
         }
