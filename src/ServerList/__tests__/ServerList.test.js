@@ -26,14 +26,14 @@ describe('ServerList', () => {
         };
     });
 
-    it('renders correctly', () => {
+    test('renders correctly', () => {
         const data = generateData(5);
         const promise = Promise.resolve({ data, totalItems: data.length });
         props.api.get.mockReturnValueOnce(promise);
         const wrapper = shallow(
             <ServerList
                 {...props}
-            />
+            />,
         );
 
         expect.assertions(4);
@@ -46,12 +46,12 @@ describe('ServerList', () => {
                 sortColumn: null,
                 sortDirection: 'ASC',
             });
-            expect(wrapper.state().data).toEqual(data);
+            expect(wrapper.state().data).toStrictEqual(data);
             expect(wrapper).toMatchSnapshot();
         });
     });
 
-    it('renders pagination correctly', () => {
+    test('renders pagination correctly', () => {
         const data = generateData(60);
         const promise = Promise.resolve({ data: data.slice(0, 25), totalItems: data.length });
         props.api.get.mockReturnValueOnce(promise);
@@ -59,7 +59,7 @@ describe('ServerList', () => {
         const wrapper = shallow(
             <ServerList
                 {...props}
-            />
+            />,
         );
 
         expect.assertions(5);
@@ -74,6 +74,7 @@ describe('ServerList', () => {
                 expect(wrapper).toMatchSnapshot();
 
                 wrapper.find(Pagination).simulate('select', 2);
+
                 expect(props.api.get).toHaveBeenCalledWith('/api/test', { pageSize: 25, pageNumber: 2 });
                 expect(wrapper.state()).toMatchObject({
                     pageNumber: 2,
@@ -82,7 +83,7 @@ describe('ServerList', () => {
             });
     });
 
-    it('renders sort correctly', () => {
+    test('renders sort correctly', () => {
         const data = generateData(60);
         const promise = Promise.resolve({ data: data.slice(0, 25), totalItems: data.length });
         props.api.get.mockReturnValueOnce(promise);
@@ -91,7 +92,7 @@ describe('ServerList', () => {
             <ServerList
                 {...props}
                 defaultSortColumn="column1"
-            />
+            />,
         );
 
         expect.assertions(5);
@@ -112,6 +113,7 @@ describe('ServerList', () => {
             expect(wrapper).toMatchSnapshot();
 
             wrapper.find(List).simulate('sortChange', { sortColumn: 'column1', sortDirection: 'DESC' });
+
             expect(props.api.get).toHaveBeenCalledWith('/api/test', {
                 pageSize: 25,
                 pageNumber: 1,
@@ -125,13 +127,13 @@ describe('ServerList', () => {
         });
     });
 
-    it('renders errors correctly', () => {
+    test('renders errors correctly', () => {
         const promise = Promise.resolve({ status: 'error', errors: ['Some error'] });
         props.api.get.mockReturnValueOnce(promise);
         const wrapper = shallow(
             <ServerList
                 {...props}
-            />
+            />,
         );
 
         expect.assertions(3);

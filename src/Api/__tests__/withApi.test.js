@@ -5,7 +5,7 @@ import { mount } from 'enzyme';
 import withApi from '../withApi';
 
 describe('withApi', () => {
-    it('pass config property', () => {
+    test('pass config property', () => {
         const Component = () => null;
         const EnhancedComponent = withApi(Component);
 
@@ -19,7 +19,7 @@ describe('withApi', () => {
                 context: {
                     api,
                 },
-            }
+            },
         );
 
         expect(wrapper.find(Component).prop('api')).toBe(api);

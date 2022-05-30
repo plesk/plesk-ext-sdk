@@ -25,27 +25,28 @@ describe('ServerForm', () => {
         };
     });
 
-    it('renders correctly', () => {
+    test('renders correctly', () => {
         const wrapper = shallow(
             <ServerForm
                 {...props}
-            />
+            />,
         );
 
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('submits data with success', () => {
+    test('submits data with success', () => {
         const promise = Promise.resolve({ status: 'success' });
         props.api.post.mockReturnValueOnce(promise);
         const wrapper = shallow(
             <ServerForm
                 {...props}
                 successUrl="/overview"
-            />
+            />,
         );
 
         wrapper.find(Form).simulate('submit', { username: 'Bob' });
+
         expect.assertions(2);
 
         return promise.then(() => {
@@ -54,48 +55,52 @@ describe('ServerForm', () => {
         });
     });
 
-    it('cancels form', () => {
+    test('cancels form', () => {
         const wrapper = shallow(
             <ServerForm
                 {...props}
                 cancelUrl="/overview"
-            />
+            />,
         );
 
         wrapper.find(Form).prop('cancelButton')
             .onClick();
+
         expect(props.history.push).toHaveBeenCalledWith('/overview');
     });
 
-    it('renders success message correctly', () => {
+    test('renders success message correctly', () => {
         const promise = Promise.resolve({ status: 'success' });
         props.api.post.mockReturnValueOnce(promise);
         const wrapper = shallow(
             <ServerForm
                 {...props}
                 successMessage="Form saved"
-            />
+            />,
         );
 
         wrapper.find(Form).simulate('submit');
+
         expect.assertions(1);
 
         return promise.then(() => {
             jest.runAllTimers();
+
             expect(props.statusMessages.add).toHaveBeenCalledWith({ intent: 'success', message: 'Form saved' });
         });
     });
 
-    it('renders common error correctly', () => {
+    test('renders common error correctly', () => {
         const promise = Promise.resolve({ status: 'error', errors: ['Some error'] });
         props.api.post.mockReturnValueOnce(promise);
         const wrapper = shallow(
             <ServerForm
                 {...props}
-            />
+            />,
         );
 
         wrapper.find(Form).simulate('submit');
+
         expect.assertions(1);
 
         return promise.then(() => {

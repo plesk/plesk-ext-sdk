@@ -7,7 +7,7 @@ describe('StatusMessagesProxy', () => {
     const updateParams = ['toast-1', { message: 'New message' }];
     const removeParams = ['toast-1'];
 
-    it('call toaster methods', () => {
+    test('call toaster methods', () => {
         const toaster = {
             add: jest.fn(),
             update: jest.fn(),
@@ -19,24 +19,19 @@ describe('StatusMessagesProxy', () => {
         statusMessages.setToaster(toaster);
 
         statusMessages.add(...addParams);
+
         expect(toaster.add).toHaveBeenCalledWith(...addParams);
 
         statusMessages.update(...updateParams);
+
         expect(toaster.update).toHaveBeenCalledWith(...updateParams);
 
         statusMessages.remove(...removeParams);
+
         expect(toaster.remove).toHaveBeenCalledWith(...removeParams);
 
         statusMessages.clear();
-        expect(toaster.clear).toHaveBeenCalled();
-    });
 
-    it('prevent calls if the toaster is not setted', () => {
-        const statusMessages = new StatusMessagesProxy();
-
-        statusMessages.add(...addParams);
-        statusMessages.update(...updateParams);
-        statusMessages.remove(...removeParams);
-        statusMessages.clear();
+        expect(toaster.clear).toHaveBeenCalledWith();
     });
 });
