@@ -1,10 +1,10 @@
 {
-  "env": {
-    "jest": true
-  },
   "extends": [
     "@plesk/eslint-config"
   ],
+  "rules": {
+    "jest/no-test-return-statement": "off"
+  },
   "settings": {
     "react": {
       "pragma": "createElement"

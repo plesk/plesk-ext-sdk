@@ -8,7 +8,7 @@ import StatusMessages from '../../StatusMessages';
 import { shallow } from 'enzyme';
 
 describe('App', () => {
-    it('renders correctly', () => {
+    test('renders correctly', () => {
         const wrapper = shallow(
             <App
                 baseUrl=""
@@ -18,11 +18,12 @@ describe('App', () => {
                     componentPath: 'Index',
                     component: () => null,
                 }]}
-            />
+            />,
         );
-        expect(wrapper.find(ConfigProvider).length).toBe(1);
-        expect(wrapper.find(ApiProvider).length).toBe(1);
-        expect(wrapper.find(StatusMessages).length).toBe(1);
+
+        expect(wrapper.find(ConfigProvider)).toHaveLength(1);
+        expect(wrapper.find(ApiProvider)).toHaveLength(1);
+        expect(wrapper.find(StatusMessages)).toHaveLength(1);
         expect(wrapper).toMatchSnapshot();
     });
 });

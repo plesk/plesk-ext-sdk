@@ -65,7 +65,7 @@ class Page extends Component {
         let pathbarContentArea = document.getElementById('pathbar-content-area');
         if (!pathbarContentArea) {
             // For Plesk 18+
-            pathbarContentArea = document.getElementsByClassName('pul-breadcrumbs__list')[0];
+            pathbarContentArea = document.querySelector('.pul-breadcrumbs__list');
         }
 
         if (!pathbarContentArea) {

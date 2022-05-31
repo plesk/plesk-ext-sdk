@@ -5,7 +5,7 @@ import withStatusMessages from '../withStatusMessages';
 import { mount } from 'enzyme';
 
 describe('withStatusMessages', () => {
-    it('pass statusMessages property', () => {
+    test('pass statusMessages property', () => {
         const Component = () => null;
         const EnhancedComponent = withStatusMessages(Component);
 
@@ -19,7 +19,7 @@ describe('withStatusMessages', () => {
                 context: {
                     statusMessages,
                 },
-            }
+            },
         );
 
         expect(wrapper.find(Component).prop('statusMessages')).toBe(statusMessages);

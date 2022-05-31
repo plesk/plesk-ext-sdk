@@ -5,17 +5,17 @@ import { StatusMessages } from '../StatusMessages';
 import { shallow } from 'enzyme';
 
 describe('StatusMessages', () => {
-    it('renders correctly', () => {
+    test('renders correctly', () => {
         const wrapper = shallow(
             <StatusMessages location={{ pathname: '/' }}>
                 <div />
-            </StatusMessages>
+            </StatusMessages>,
         );
 
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('clear messages', () => {
+    test('clear messages', () => {
         const statusMessages = {
             clear: jest.fn(),
             setToaster: jest.fn(),
@@ -23,10 +23,10 @@ describe('StatusMessages', () => {
         const wrapper = shallow(
             <StatusMessages location={{ pathname: '/' }} statusMessages={statusMessages}>
                 <div />
-            </StatusMessages>
+            </StatusMessages>,
         );
         wrapper.setProps({ location: { pathname: '/next' } });
 
-        expect(statusMessages.clear).toHaveBeenCalled();
+        expect(statusMessages.clear).toHaveBeenCalledWith();
     });
 });

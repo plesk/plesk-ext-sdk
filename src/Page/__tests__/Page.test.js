@@ -5,7 +5,7 @@ import Page from '../Page';
 import { shallow } from 'enzyme';
 
 describe('Page', () => {
-    it('renders correctly', () => {
+    test('renders correctly', () => {
         const routes = [{
             path: '/',
             componentPath: 'Index',
@@ -23,7 +23,7 @@ describe('Page', () => {
                         lmsg: jest.fn(() => 'Page title'),
                     },
                 },
-            }
+            },
         );
 
         expect(wrapper).toMatchSnapshot();

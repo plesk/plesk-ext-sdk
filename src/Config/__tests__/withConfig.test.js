@@ -5,7 +5,7 @@ import withConfig from '../withConfig';
 import { mount } from 'enzyme';
 
 describe('withConfig', () => {
-    it('pass config property', () => {
+    test('pass config property', () => {
         const Component = () => null;
         const EnhancedComponent = withConfig(Component);
 
@@ -19,7 +19,7 @@ describe('withConfig', () => {
                 context: {
                     config,
                 },
-            }
+            },
         );
 
         expect(wrapper.find(Component).prop('config')).toBe(config);
