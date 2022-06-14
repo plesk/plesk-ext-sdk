@@ -19,6 +19,12 @@ const renderTitle = (title = '') => {
     const heading = document.querySelector('.heading-area');
     if (heading) {
         heading.innerHTML = `<h2><span>${title}</span></h2>`;
+    } else {
+        // For Plesk 18+
+        const titleSpan = document.querySelector('.page-content-header__title');
+        if (titleSpan) {
+            titleSpan.textContent = title;
+        }
     }
 };
 
