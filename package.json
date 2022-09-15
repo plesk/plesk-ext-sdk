@@ -1,7 +1,7 @@
 {
   "name": "@plesk/plesk-ext-sdk",
   "description": "Plesk Extension SDK",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "author": "Plesk Developers <plesk-dev-leads@plesk.com> (https://www.plesk.com/)",
   "repository": "plesk/plesk-ext-sdk",
   "bugs": {
@@ -40,8 +40,10 @@
     "eslint": "^7.28.0",
     "eslint-plugin-jest": "^24.3.6",
     "fs-extra": "^6.0.1",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "jest": "^25.5.4",
+    "pug": "^3.0.2",
+    "pug-loader": "^2.4.0",
     "qs": "^6.5.2",
     "react-router-dom": "^4.3.1",
     "webpack": "^5.72.1",
