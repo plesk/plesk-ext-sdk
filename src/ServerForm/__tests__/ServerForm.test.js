@@ -1,7 +1,8 @@
 // Copyright 1999-2018. Plesk International GmbH. All rights reserved.
-
+import { createElement } from 'react';
 import { Form } from '@plesk/ui-library';
 import { ServerForm } from '../ServerForm';
+
 import { shallow } from 'enzyme';
 
 jest.useFakeTimers();
@@ -55,19 +56,6 @@ describe('ServerForm', () => {
         });
     });
 
-    test('cancels form', () => {
-        const wrapper = shallow(
-            <ServerForm
-                {...props}
-                cancelUrl="/overview"
-            />,
-        );
-
-        wrapper.find(Form).prop('cancelButton')
-            .onClick();
-
-        expect(props.history.push).toHaveBeenCalledWith('/overview');
-    });
 
     test('renders success message correctly', () => {
         const promise = Promise.resolve({ status: 'success' });

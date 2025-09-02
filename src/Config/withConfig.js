@@ -1,6 +1,7 @@
 // Copyright 1999-2018. Plesk International GmbH. All rights reserved.
 
-import { PropTypes } from '@plesk/ui-library';
+import PropTypes from 'prop-types';
+import { createElement } from 'react';
 
 const withConfig = Component => {
     const C = (props, context) => (

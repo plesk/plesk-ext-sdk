@@ -9,6 +9,7 @@ export default [
     {
         rules: {
             'jest/no-test-return-statement': 'off',
+            'react/react-in-jsx-scope': 'off',
             'no-console': 'off',
         },
         settings: {

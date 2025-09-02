@@ -1,48 +1,57 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`ServerList renders correctly 1`] = `
 <div>
   <List
+    allRowsSelected={false}
+    autoExpandSingleItem={true}
     baseClassName="pul-list"
-    className={null}
+    className=""
     columns={
-      Array [
-        Object {
+      [
+        {
           "key": "column1",
           "title": "Column1",
         },
       ]
     }
     data={
-      Array [
-        Object {
+      [
+        {
           "column1": 0,
           "key": "0",
         },
-        Object {
+        {
           "column1": 1,
           "key": "1",
         },
-        Object {
+        {
           "column1": 2,
           "key": "2",
         },
-        Object {
+        {
           "column1": 3,
           "key": "3",
         },
-        Object {
+        {
           "column1": 4,
           "key": "4",
         },
       ]
     }
-    onSelectionChange={null}
+    emptyViewMode="all"
+    expandedRows={[]}
+    filtered={false}
+    loading={false}
+    loadingRows={[]}
+    notExpandableRows={[]}
     onSortChange={[Function]}
+    reorderable={false}
     rowKey="key"
-    selection={Array []}
+    selection={[]}
     sortColumn={null}
     sortDirection="ASC"
+    vertical={450}
   />
 </div>
 `;
@@ -50,23 +59,32 @@ exports[`ServerList renders correctly 1`] = `
 exports[`ServerList renders errors correctly 1`] = `
 <div>
   <List
+    allRowsSelected={false}
+    autoExpandSingleItem={true}
     baseClassName="pul-list"
-    className={null}
+    className=""
     columns={
-      Array [
-        Object {
+      [
+        {
           "key": "column1",
           "title": "Column1",
         },
       ]
     }
-    data={Array []}
-    onSelectionChange={null}
+    data={[]}
+    emptyViewMode="all"
+    expandedRows={[]}
+    filtered={false}
+    loading={false}
+    loadingRows={[]}
+    notExpandableRows={[]}
     onSortChange={[Function]}
+    reorderable={false}
     rowKey="key"
-    selection={Array []}
+    selection={[]}
     sortColumn={null}
     sortDirection="ASC"
+    vertical={450}
   />
 </div>
 `;
@@ -74,134 +92,138 @@ exports[`ServerList renders errors correctly 1`] = `
 exports[`ServerList renders pagination correctly 1`] = `
 <div>
   <List
+    allRowsSelected={false}
+    autoExpandSingleItem={true}
     baseClassName="pul-list"
-    className={null}
+    className=""
     columns={
-      Array [
-        Object {
+      [
+        {
           "key": "column1",
           "title": "Column1",
         },
       ]
     }
     data={
-      Array [
-        Object {
+      [
+        {
           "column1": 0,
           "key": "0",
         },
-        Object {
+        {
           "column1": 1,
           "key": "1",
         },
-        Object {
+        {
           "column1": 2,
           "key": "2",
         },
-        Object {
+        {
           "column1": 3,
           "key": "3",
         },
-        Object {
+        {
           "column1": 4,
           "key": "4",
         },
-        Object {
+        {
           "column1": 5,
           "key": "5",
         },
-        Object {
+        {
           "column1": 6,
           "key": "6",
         },
-        Object {
+        {
           "column1": 7,
           "key": "7",
         },
-        Object {
+        {
           "column1": 8,
           "key": "8",
         },
-        Object {
+        {
           "column1": 9,
           "key": "9",
         },
-        Object {
+        {
           "column1": 10,
           "key": "10",
         },
-        Object {
+        {
           "column1": 11,
           "key": "11",
         },
-        Object {
+        {
           "column1": 12,
           "key": "12",
         },
-        Object {
+        {
           "column1": 13,
           "key": "13",
         },
-        Object {
+        {
           "column1": 14,
           "key": "14",
         },
-        Object {
+        {
           "column1": 15,
           "key": "15",
         },
-        Object {
+        {
           "column1": 16,
           "key": "16",
         },
-        Object {
+        {
           "column1": 17,
           "key": "17",
         },
-        Object {
+        {
           "column1": 18,
           "key": "18",
         },
-        Object {
+        {
           "column1": 19,
           "key": "19",
         },
-        Object {
+        {
           "column1": 20,
           "key": "20",
         },
-        Object {
+        {
           "column1": 21,
           "key": "21",
         },
-        Object {
+        {
           "column1": 22,
           "key": "22",
         },
-        Object {
+        {
           "column1": 23,
           "key": "23",
         },
-        Object {
+        {
           "column1": 24,
           "key": "24",
         },
       ]
     }
-    onSelectionChange={null}
+    emptyViewMode="all"
+    expandedRows={[]}
+    filtered={false}
+    loading={false}
+    loadingRows={[]}
+    notExpandableRows={[]}
     onSortChange={[Function]}
+    reorderable={false}
     rowKey="key"
-    selection={Array []}
+    selection={[]}
     sortColumn={null}
     sortDirection="ASC"
+    vertical={450}
   />
   <Pagination
-    baseClassName="pul-pagination"
-    className={null}
     current={1}
-    isShowNavigationButtons={true}
-    isShowPageButtons={null}
-    maxPageButtons={11}
     onSelect={[Function]}
     total={3}
   />
@@ -211,134 +233,138 @@ exports[`ServerList renders pagination correctly 1`] = `
 exports[`ServerList renders sort correctly 1`] = `
 <div>
   <List
+    allRowsSelected={false}
+    autoExpandSingleItem={true}
     baseClassName="pul-list"
-    className={null}
+    className=""
     columns={
-      Array [
-        Object {
+      [
+        {
           "key": "column1",
           "title": "Column1",
         },
       ]
     }
     data={
-      Array [
-        Object {
+      [
+        {
           "column1": 0,
           "key": "0",
         },
-        Object {
+        {
           "column1": 1,
           "key": "1",
         },
-        Object {
+        {
           "column1": 2,
           "key": "2",
         },
-        Object {
+        {
           "column1": 3,
           "key": "3",
         },
-        Object {
+        {
           "column1": 4,
           "key": "4",
         },
-        Object {
+        {
           "column1": 5,
           "key": "5",
         },
-        Object {
+        {
           "column1": 6,
           "key": "6",
         },
-        Object {
+        {
           "column1": 7,
           "key": "7",
         },
-        Object {
+        {
           "column1": 8,
           "key": "8",
         },
-        Object {
+        {
           "column1": 9,
           "key": "9",
         },
-        Object {
+        {
           "column1": 10,
           "key": "10",
         },
-        Object {
+        {
           "column1": 11,
           "key": "11",
         },
-        Object {
+        {
           "column1": 12,
           "key": "12",
         },
-        Object {
+        {
           "column1": 13,
           "key": "13",
         },
-        Object {
+        {
           "column1": 14,
           "key": "14",
         },
-        Object {
+        {
           "column1": 15,
           "key": "15",
         },
-        Object {
+        {
           "column1": 16,
           "key": "16",
         },
-        Object {
+        {
           "column1": 17,
           "key": "17",
         },
-        Object {
+        {
           "column1": 18,
           "key": "18",
         },
-        Object {
+        {
           "column1": 19,
           "key": "19",
         },
-        Object {
+        {
           "column1": 20,
           "key": "20",
         },
-        Object {
+        {
           "column1": 21,
           "key": "21",
         },
-        Object {
+        {
           "column1": 22,
           "key": "22",
         },
-        Object {
+        {
           "column1": 23,
           "key": "23",
         },
-        Object {
+        {
           "column1": 24,
           "key": "24",
         },
       ]
     }
-    onSelectionChange={null}
+    emptyViewMode="all"
+    expandedRows={[]}
+    filtered={false}
+    loading={false}
+    loadingRows={[]}
+    notExpandableRows={[]}
     onSortChange={[Function]}
+    reorderable={false}
     rowKey="key"
-    selection={Array []}
+    selection={[]}
     sortColumn="column1"
     sortDirection="ASC"
+    vertical={450}
   />
   <Pagination
-    baseClassName="pul-pagination"
-    className={null}
     current={1}
-    isShowNavigationButtons={true}
-    isShowPageButtons={null}
-    maxPageButtons={11}
     onSelect={[Function]}
     total={3}
   />

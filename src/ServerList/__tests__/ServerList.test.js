@@ -1,6 +1,7 @@
 // Copyright 1999-2018. Plesk International GmbH. All rights reserved.
 
 import { Pagination, List } from '@plesk/ui-library';
+import { createElement } from 'react';
 import { ServerList } from '../ServerList';
 import { shallow } from 'enzyme';
 

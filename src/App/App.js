@@ -1,7 +1,9 @@
 // Copyright 1999-2018. Plesk International GmbH. All rights reserved.
 
-import { LocaleProvider, PropTypes } from '@plesk/ui-library';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { LocaleProvider } from '@plesk/ui-library';
+import PropTypes from 'prop-types';
+import { createElement } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ConfigProvider } from '../Config';
 import { ApiProvider } from '../Api';
 import StatusMessages from '../StatusMessages';
@@ -15,9 +17,9 @@ const App = ({ locale, routes, ...props }) => (
     >
         <LocaleProvider messages={locale}>
             <ApiProvider>
-                <BrowserRouter basename={props.baseUrl}>
-                    <StatusMessages>
-                        <Switch>
+                <StatusMessages>
+                    <BrowserRouter basename={props.baseUrl}>
+                        <Routes>
                             {routes.map(({ path, component: Tag, ...routeProps }) => (
                                 <Route
                                     key={path}
@@ -26,9 +28,9 @@ const App = ({ locale, routes, ...props }) => (
                                     {...routeProps}
                                 />
                             ))}
-                        </Switch>
-                    </StatusMessages>
-                </BrowserRouter>
+                        </Routes>
+                    </BrowserRouter>
+                </StatusMessages>
             </ApiProvider>
         </LocaleProvider>
     </ConfigProvider>

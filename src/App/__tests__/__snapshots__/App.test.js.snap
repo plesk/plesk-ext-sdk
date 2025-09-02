@@ -1,38 +1,38 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`App renders correctly 1`] = `
 <ConfigProvider
   value={
-    Object {
+    {
       "baseUrl": "",
     }
   }
 >
   <LocaleProvider
-    messages={Object {}}
+    messages={{}}
   >
     <ConfigProvider
       value={
-        Object {
+        {
           "get": [Function],
           "post": [Function],
         }
       }
     >
-      <BrowserRouter
-        basename=""
-      >
-        <withRouter(StatusMessages)>
-          <Switch>
+      <withRouter(StatusMessages)>
+        <BrowserRouter
+          basename=""
+        >
+          <Routes>
             <Route
               componentPath="Index"
               key="/"
               path="/"
               render={[Function]}
             />
-          </Switch>
-        </withRouter(StatusMessages)>
-      </BrowserRouter>
+          </Routes>
+        </BrowserRouter>
+      </withRouter(StatusMessages)>
     </ConfigProvider>
   </LocaleProvider>
 </ConfigProvider>

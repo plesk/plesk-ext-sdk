@@ -1,10 +1,12 @@
 // Copyright 1999-2018. Plesk International GmbH. All rights reserved.
 
-import { Component, Form, PropTypes } from '@plesk/ui-library';
-import { withRouter } from 'react-router-dom';
+import { Component, createElement } from 'react';
+import { Form } from '@plesk/ui-library';
+import PropTypes from 'prop-types';
 import { withApi } from '../Api';
 import { withConfig } from '../Config';
 import { withStatusMessages } from '../StatusMessages';
+import withRouter from '../withRouter';
 
 export class ServerForm extends Component {
     static propTypes = {
