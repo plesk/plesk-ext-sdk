@@ -1,6 +1,6 @@
 // Copyright 1999-2018. Plesk International GmbH. All rights reserved.
 
-import { createElement, Component, List, Pagination, PropTypes } from '@plesk/ui-library';
+import { Component, List, Pagination, PropTypes } from '@plesk/ui-library';
 import { withApi } from '../Api';
 import { withConfig } from '../Config';
 import { withStatusMessages } from '../StatusMessages';

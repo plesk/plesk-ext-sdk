@@ -1,6 +1,6 @@
 // Copyright 1999-2018. Plesk International GmbH. All rights reserved.
 
-import { createElement, LocaleProvider, PropTypes } from '@plesk/ui-library';
+import { LocaleProvider, PropTypes } from '@plesk/ui-library';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { ConfigProvider } from '../Config';
 import { ApiProvider } from '../Api';

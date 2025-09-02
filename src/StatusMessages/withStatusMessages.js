@@ -1,6 +1,6 @@
 // Copyright 1999-2018. Plesk International GmbH. All rights reserved.
 
-import { createElement, PropTypes } from '@plesk/ui-library';
+import { PropTypes } from '@plesk/ui-library';
 
 const withStatusMessages = Component => {
     const C = (props, context) => (

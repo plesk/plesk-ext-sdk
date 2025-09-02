@@ -1,6 +1,6 @@
 // Copyright 1999-2018. Plesk International GmbH. All rights reserved.
 
-import { createElement, Component, Form, PropTypes } from '@plesk/ui-library';
+import { Component, Form, PropTypes } from '@plesk/ui-library';
 import { withRouter } from 'react-router-dom';
 import { withApi } from '../Api';
 import { withConfig } from '../Config';
