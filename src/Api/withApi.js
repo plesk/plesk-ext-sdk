@@ -1,15 +1,15 @@
-// Copyright 1999-2018. Plesk International GmbH. All rights reserved.
+// Copyright 1999-2025. WebPros International GmbH. All rights reserved.
 
-import { createElement, PropTypes } from '@plesk/ui-library';
+import { createElement } from 'react';
+import PropTypes from 'prop-types';
+import { ApiProviderContext } from './ApiProvider';
 
 const withApi = Component => {
-    const C = (props, context) => (
-        <Component api={context.api} {...props} />
+    const C = props => (
+        <ApiProviderContext.Consumer>
+            {api => <Component api={api} {...props} />}
+        </ApiProviderContext.Consumer>
     );
-
-    C.contextTypes = {
-        api: PropTypes.object,
-    };
     C.displayName = `withApi(${Component.displayName || Component.name})`;
     C.WrappedComponent = Component;
 

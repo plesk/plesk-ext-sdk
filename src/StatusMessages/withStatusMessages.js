@@ -1,15 +1,17 @@
-// Copyright 1999-2018. Plesk International GmbH. All rights reserved.
+// Copyright 1999-2025. WebPros International GmbH. All rights reserved.
 
-import { createElement, PropTypes } from '@plesk/ui-library';
+import { createElement } from 'react';
+import { StatusMessagesContext } from './StatusMessagesProvider';
 
 const withStatusMessages = Component => {
-    const C = (props, context) => (
-        <Component statusMessages={context.statusMessages} {...props} />
+    const C = props => (
+        <StatusMessagesContext.Consumer>
+            {statusMessages => (
+                <Component statusMessages={statusMessages} {...props} />
+            )}
+        </StatusMessagesContext.Consumer>
     );
 
-    C.contextTypes = {
-        statusMessages: PropTypes.object,
-    };
     C.displayName = `withStatusMessages(${Component.displayName || Component.name})`;
     C.WrappedComponent = Component;
 

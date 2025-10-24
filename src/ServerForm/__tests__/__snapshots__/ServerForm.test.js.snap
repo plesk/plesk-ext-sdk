@@ -1,27 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`ServerForm renders correctly 1`] = `
 <Form
   action="/api/save"
-  additionalButtons={Array []}
   applyButton={false}
-  baseClassName="pul-form"
   cancelButton={false}
-  className={null}
-  errors={Object {}}
-  footerClassName={null}
-  hideRequiredLegend={false}
+  errors={{}}
   onSubmit={[Function]}
-  requiredMark={
-    <span
-      className="pul-form__required"
-    >
-      *
-    </span>
-  }
   state={null}
-  submitButton={true}
-  values={Object {}}
-  vertical={null}
 />
 `;

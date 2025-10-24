@@ -1,15 +1,16 @@
-// Copyright 1999-2018. Plesk International GmbH. All rights reserved.
+// Copyright 1999-2025. WebPros International GmbH. All rights reserved.
 
-import { createElement, PropTypes } from '@plesk/ui-library';
+import { createElement } from 'react';
+
+import { ConfigProviderContext } from './ConfigProvider';
 
 const withConfig = Component => {
-    const C = (props, context) => (
-        <Component config={context.config} {...props} />
+    const C = props => (
+        <ConfigProviderContext.Consumer>
+            {config => <Component config={config} {...props} />}
+        </ConfigProviderContext.Consumer>
     );
 
-    C.contextTypes = {
-        config: PropTypes.object,
-    };
     C.displayName = `withConfig(${Component.displayName || Component.name})`;
     C.WrappedComponent = Component;
 

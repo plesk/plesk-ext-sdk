@@ -1,28 +1,19 @@
-// Copyright 1999-2018. Plesk International GmbH. All rights reserved.
+// Copyright 1999-2025. WebPros International GmbH. All rights reserved.
 
-import { Component, PropTypes } from '@plesk/ui-library';
+import { createElement, createContext } from 'react';
+import PropTypes from 'prop-types';
 
-export default class ConfigProvider extends Component {
-    static propTypes = {
-        children: PropTypes.node,
-        value: PropTypes.object.isRequired,
-    };
+export const ConfigProviderContext = createContext();
 
-    static childContextTypes = {
-        config: PropTypes.object,
-    };
+const ConfigProvider = ({ children, value }) => (
+    <ConfigProviderContext.Provider value={value}>
+        {children}
+    </ConfigProviderContext.Provider>
+);
 
-    static defaultProps = {
-        children: null,
-    };
+ConfigProvider.propTypes = {
+    children: PropTypes.node.isRequired,
+    value: PropTypes.object.isRequired,
+};
 
-    getChildContext() {
-        return {
-            config: this.props.value,
-        };
-    }
-
-    render() {
-        return this.props.children;
-    }
-}
+export default ConfigProvider;

@@ -1,7 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`StatusMessages renders correctly 1`] = `
-<ConfigProvider
+<StatusMessagesProvider
   value={
     StatusMessagesProxy {
       "setToaster": [Function],
@@ -10,11 +10,6 @@ exports[`StatusMessages renders correctly 1`] = `
   }
 >
   <div />
-  <Toaster
-    baseClassName="pul-toaster"
-    className={null}
-    position="top"
-    toasts={null}
-  />
-</ConfigProvider>
+  <ForwardRef(Toaster) />
+</StatusMessagesProvider>
 `;
