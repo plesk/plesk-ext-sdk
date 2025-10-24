@@ -1,9 +1,11 @@
-// Copyright 1999-2018. Plesk International GmbH. All rights reserved.
+// Copyright 1999-2025. WebPros International GmbH. All rights reserved.
 
-import { createElement, PureComponent, Toaster, PropTypes } from '@plesk/ui-library';
+import { Toaster } from '@plesk/ui-library';
+import PropTypes from 'prop-types';
+import { createElement, PureComponent } from 'react';
 import StatusMessagesProxy from './StatusMessagesProxy';
 import StatusMessagesProvider from './StatusMessagesProvider';
-import { withRouter } from 'react-router-dom';
+import { withRouter } from '../utils';
 
 export class StatusMessages extends PureComponent {
     static propTypes = {

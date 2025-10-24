@@ -11,22 +11,26 @@ How to enable ESLint:
     ```json
     {
       "scripts": {
-        "lint": "eslint frontend"
+        "lint": "eslint src/rontend"
       }
     }
     ```
-2. Add `.eslintrc` file
-    `.eslintrc`
-    ```
-    {
-      "extends": "@plesk/eslint-config",
-      "settings": {
-        "react": {
-          "pragma": "createElement"
-        }
-      }
-    }
-    ```
+
+2. Add `eslint.config.mjs` file
+```js
+const pleskConfig = require('@plesk/eslint-config');
+
+module.exports = [
+    pleskConfig,
+];
+```
+
+3. Due to dependency bug in enzyme, add version override in your `package.json`
+```  
+"resolutions": {
+    "cheerio": "1.0.0-rc.12"
+  }
+```
 
 Now you can check your code with the following command:
 
@@ -38,9 +42,8 @@ Alternatively, you can run `yarn lint --fix` command to automatically fix all er
 
 You can also enable ESLint in your PhpStorm: Settings > Languages & Frameworks > JavaScript > Code Quality Tools > ESLint > Enable
 
-## StyleLint
+To know more about ESLint and it's configuration please check [ESLint documentation](https://eslint.org/docs/latest/use/getting-started)
 
-This section is under construction.
 
 ## Unit Testing
 
@@ -49,7 +52,7 @@ All your code should be covered by unit tests. We recommend using [Jest](https:/
 ### Installing Dependencies
 
 ```bash
-yarn add enzyme enzyme-adapter-react-16 --dev
+yarn add @cfaester/enzyme-adapter-react-18 --dev
 ```
 
 ### Adding Helper Scripts
@@ -71,10 +74,12 @@ yarn add enzyme enzyme-adapter-react-16 --dev
 
 ```js
 import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import Adapter from '@cfaester/enzyme-adapter-react-18';
+import { TextEncoder } from 'util';
+global.TextEncoder = TextEncoder;
+
 
 Enzyme.configure({ adapter: new Adapter() });
-Enzyme.configure({ disableLifecycleMethods: true });
 ```
 
 ### Writing Tests
@@ -105,17 +110,6 @@ describe('Overview', () => {
         expect(wrapper).toMatchSnapshot();
     });
 });
-```
-
-Add to `.eslintrc` section `env`:
-
-
-```
-{
-  "env": {
-    "jest": true
-  }
-}
 ```
 
 ### Running Tests

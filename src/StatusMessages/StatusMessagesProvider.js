@@ -1,30 +1,24 @@
-// Copyright 1999-2018. Plesk International GmbH. All rights reserved.
+// Copyright 1999-2025. WebPros International GmbH. All rights reserved.
 
-import { Component, PropTypes } from '@plesk/ui-library';
+import PropTypes from 'prop-types';
+import { createContext, createElement } from 'react';
 import StatusMessagesProxy from './StatusMessagesProxy';
 
-export default class ConfigProvider extends Component {
-    static propTypes = {
-        children: PropTypes.node,
-        value: PropTypes.object,
-    };
+export const StatusMessagesContext = createContext();
 
-    static childContextTypes = {
-        statusMessages: PropTypes.object,
-    };
+const StatusMessagesProvider = ({ children, value }) => (
+    <StatusMessagesContext.Provider value={value}>
+        {children}
+    </StatusMessagesContext.Provider>
+);
 
-    static defaultProps = {
-        children: null,
-        value: new StatusMessagesProxy(),
-    };
+StatusMessagesProvider.propTypes = {
+    children: PropTypes.node.isRequired,
+    value: PropTypes.object,
+};
 
-    getChildContext() {
-        return {
-            statusMessages: this.props.value,
-        };
-    }
+StatusMessagesProvider.defaultProps = {
+    value: new StatusMessagesProxy(),
+};
 
-    render() {
-        return this.props.children;
-    }
-}
+export default StatusMessagesProvider;

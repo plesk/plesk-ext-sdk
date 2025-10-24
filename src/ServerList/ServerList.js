@@ -1,6 +1,8 @@
-// Copyright 1999-2018. Plesk International GmbH. All rights reserved.
+// Copyright 1999-2025. WebPros International GmbH. All rights reserved.
 
-import { createElement, Component, List, Pagination, PropTypes } from '@plesk/ui-library';
+import { List, Pagination } from '@plesk/ui-library';
+import PropTypes from 'prop-types';
+import { createElement, Component } from 'react';
 import { withApi } from '../Api';
 import { withConfig } from '../Config';
 import { withStatusMessages } from '../StatusMessages';

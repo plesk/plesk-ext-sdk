@@ -99,7 +99,7 @@ Create `package.json` file in the root of your project or use yarn init command:
 
 Since UI Library is based on React and browsers don't support jsx and ES6 syntax natively, first we need to transpile our code to native JS. We will use [Babel](http://babeljs.io/) for it. We will also use ES6 imports for importing functions and components from UI Library. We'll have to use [Webpack](https://webpack.js.org/) for handling ES6 imports because browsers don't support them natively. All these tools and some configs for integrating them are available in the package `@plesk/plesk-ext-sdk`. We will also need an HTTP client for retrieving data from the server, so let's install, for example, [axios](https://github.com/axios/axios) as a dependency.
 ```bash
-yarn add @plesk/plesk-ext-sdk@0.5.5 axios
+yarn add @plesk/plesk-ext-sdk axios
 ```
 Once Yarn has added these packages to `package.json`, install it and generate `yarn.lock`. The lock file should be added to Git – you can read more about this in the Yarn [documentation](https://yarnpkg.com/lang/en/docs/yarn-lock/).
 
@@ -139,37 +139,31 @@ Now we can write our first React component.
 `src/frontend/index.js`
 
 ```js
-import { createElement, Component, Alert, PropTypes } from '@plesk/plesk-ext-sdk';
+import { createElement, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { Alert } from '@plesk/plesk-ext-sdk';
 import axios from 'axios';
 
-export default class extends Component {
-    static propTypes = {
-        baseUrl: PropTypes.string.isRequired,
-    };
+export default function MainPage({baseUrl}) {
+    const [date, setDate] = useState(null);
 
-    state = {
-        date: null,
-    };
-
-    componentDidMount() {
-        const { baseUrl } = this.props;
-        axios.get(`${baseUrl}/api/date`).then(({ data }) => this.setState({ date: data }));
+    useEffect(() => {
+        axios.get(`${baseUrl}/api/date`).then(({ data }) => setDate(data));
+    }, []);
+    
+    if (!date) {
+        return null;
     }
-
-    render() {
-        const { date } = this.state;
-
-        if (!date) {
-            return null;
-        }
-
-        return (
-            <Alert intent="info">
-                {`Server time: ${date}`}
-            </Alert>
-        )
-    }
+    return (
+        <Alert intent="info">
+            {`Server time: ${date}`}
+        </Alert>
+    );
 }
+
+MainPage.propTypes = {
+  baseUrl: PropTypes.string.isRequired,
+};
 ```
 
 Let's build the app to create the production code with `yarn build` command.

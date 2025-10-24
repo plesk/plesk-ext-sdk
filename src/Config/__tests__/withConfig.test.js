@@ -1,8 +1,9 @@
-// Copyright 1999-2018. Plesk International GmbH. All rights reserved.
+// Copyright 1999-2025. WebPros International GmbH. All rights reserved.
 
-import { createElement } from '@plesk/ui-library';
+import { createElement } from 'react';
 import withConfig from '../withConfig';
 import { mount } from 'enzyme';
+import ConfigProvider from '../ConfigProvider';
 
 describe('withConfig', () => {
     test('pass config property', () => {
@@ -13,13 +14,11 @@ describe('withConfig', () => {
         expect(EnhancedComponent.displayName).toBe('withConfig(Component)');
 
         const config = {};
+
         const wrapper = mount(
-            <EnhancedComponent />,
-            {
-                context: {
-                    config,
-                },
-            },
+            <ConfigProvider value={config}>
+                <EnhancedComponent />
+            </ConfigProvider>,
         );
 
         expect(wrapper.find(Component).prop('config')).toBe(config);

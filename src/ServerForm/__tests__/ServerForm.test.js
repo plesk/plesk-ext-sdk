@@ -1,6 +1,7 @@
-// Copyright 1999-2018. Plesk International GmbH. All rights reserved.
+// Copyright 1999-2025. WebPros International GmbH. All rights reserved.
 
-import { createElement, Form } from '@plesk/ui-library';
+import { Form } from '@plesk/ui-library';
+import { createElement } from 'react';
 import { ServerForm } from '../ServerForm';
 import { shallow } from 'enzyme';
 

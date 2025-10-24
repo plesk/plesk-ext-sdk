@@ -1,8 +1,9 @@
-// Copyright 1999-2018. Plesk International GmbH. All rights reserved.
+// Copyright 1999-2025. WebPros International GmbH. All rights reserved.
 
-import { createElement } from '@plesk/ui-library';
+import { createElement } from 'react';
 import { mount } from 'enzyme';
 import withApi from '../withApi';
+import ApiProvider from '../ApiProvider';
 
 describe('withApi', () => {
     test('pass config property', () => {
@@ -14,12 +15,9 @@ describe('withApi', () => {
 
         const api = {};
         const wrapper = mount(
-            <EnhancedComponent />,
-            {
-                context: {
-                    api,
-                },
-            },
+            <ApiProvider value={api}>
+                <EnhancedComponent />
+            </ApiProvider >,
         );
 
         expect(wrapper.find(Component).prop('api')).toBe(api);

@@ -1,6 +1,7 @@
-// Copyright 1999-2018. Plesk International GmbH. All rights reserved.
+// Copyright 1999-2025. WebPros International GmbH. All rights reserved.
 
-import { createElement, createPortal, Component, Fragment, PropTypes } from '@plesk/ui-library';
+import { createElement, createPortal, Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const stripTags = str => (str || '').replace(/<\w+(\s+("[^"]*"|'[^']*'|[^>])+)?(\/)?>|<\/\w+>/gi, '');
