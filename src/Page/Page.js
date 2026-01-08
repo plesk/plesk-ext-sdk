@@ -3,6 +3,7 @@
 import { createElement, createPortal, Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { Icon, isRtl } from '@plesk/ui-library';
 
 const stripTags = str => (str || '').replace(/<\w+(\s+("[^"]*"|'[^']*'|[^>])+)?(\/)?>|<\/\w+>/gi, '');
 
@@ -39,6 +40,32 @@ const getTranslatedTitle = ({ route, locale }) => {
     return locale.lmsg(key, {}, route.title || null);
 };
 
+const renderPathbar = (pathbar) => {
+    if (!pathbar.length) {
+        return null;
+    }
+
+    // For Plesk 17.8
+    let pathbarContentArea = document.getElementById('pathbar-content-area');
+    if (!pathbarContentArea) {
+        // For Plesk 18+
+        pathbarContentArea = document.querySelector('.pul-breadcrumbs__list');
+    }
+
+    if (!pathbarContentArea) {
+        return null;
+    }
+
+    return createPortal(pathbar.map(({ path, title }) => (
+        <li key={path} className="pul-breadcrumbs__item">
+            <Link to={path}>{title}</Link>
+            <span className="pul-breadcrumbs__separator">
+                <Icon name={isRtl() ? 'chevron-left' : 'chevron-right'} />
+            </span>
+        </li>
+    )), pathbarContentArea);
+};
+
 class Page extends Component {
     static propTypes = {
         path: PropTypes.string.isRequired,
@@ -68,17 +95,6 @@ class Page extends Component {
     }
 
     renderPathbar() {
-        // For Plesk 17.8
-        let pathbarContentArea = document.getElementById('pathbar-content-area');
-        if (!pathbarContentArea) {
-            // For Plesk 18+
-            pathbarContentArea = document.querySelector('.pul-breadcrumbs__list');
-        }
-
-        if (!pathbarContentArea) {
-            return null;
-        }
-
         const { locale } = this.context;
         let route = this.getCurrentRoute();
 
@@ -90,11 +106,7 @@ class Page extends Component {
             });
         }
 
-        if (!pathbar.length) {
-            return null;
-        }
-
-        return createPortal(pathbar.map(({ path, title }) => <li key={path}><Link to={path}>{title}</Link></li>), pathbarContentArea);
+        return renderPathbar(pathbar);
     }
 
     render() {
