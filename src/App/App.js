@@ -24,7 +24,7 @@ const App = ({ locale, routes, ...props }) => (
                                 <Route
                                     key={path}
                                     path={path}
-                                    element={<Page path={path} routes={routes}><Tag {...props} /></Page>}
+                                    element={<Page key={path} path={path} routes={routes}><Tag {...props} /></Page>}
                                     {...routeProps}
                                 />
                             ))}
