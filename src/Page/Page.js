@@ -100,10 +100,13 @@ class Page extends Component {
 
         const pathbar = [];
         while (route.parent && (route = this.findRouteByPath(route.parent))) {
-            pathbar.unshift({
-                path: route.path,
-                title: getTranslatedTitle({ route, locale }),
-            });
+            const title = getTranslatedTitle({ route, locale });
+            if (title) {
+                pathbar.unshift({
+                    path: route.path,
+                    title,
+                });
+            }
         }
 
         return renderPathbar(pathbar);
