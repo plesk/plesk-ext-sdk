@@ -1,3 +1,7 @@
+## v0.9.1
+
+* Added `@ljharb/tsconfig` dependency to fix the webpack 5.109+ build failure caused by `side-channel`'s bundled `tsconfig.json`
+
 ## v0.9.0
 
 * Babel updated to version 8
