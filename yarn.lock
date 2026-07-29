@@ -1649,6 +1649,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@ljharb/tsconfig@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@ljharb/tsconfig/-/tsconfig-0.3.2.tgz#743593e23f227393422a2b9612e477d8eef1df17"
+  integrity sha512-eAl8JEVuTikzBOgymq/ndBPOH5hThMLlryKoH3O4evzNHO9VfxKF6f81gxWyCadO6zKKkXO0IVOh+nvYB0aTZQ==
+
 "@napi-rs/wasm-runtime@^0.2.11":
   version "0.2.12"
   resolved "https://registry.yarnpkg.com/@napi-rs/wasm-runtime/-/wasm-runtime-0.2.12.tgz#3e78a8b96e6c33a6c517e1894efbd5385a7cb6f2"
